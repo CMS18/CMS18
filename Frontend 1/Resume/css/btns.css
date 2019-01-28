@@ -1,0 +1,180 @@
+
+
+
+/* #region Button Styles */
+
+a.animated-button:link,
+a.animated-button:visited {
+	position: relative;
+	display: block;
+	margin: 30px auto 0;
+	padding: 14px 15px;
+	color: #7f848e;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	overflow: hidden;
+	letter-spacing: .08em;
+	border-radius: 0;
+	text-shadow: none;
+	/* text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2); */
+	-webkit-transition: all 0.6 ease;
+	-moz-transition: all 0.6 ease;
+	-o-transition: all 0.6 ease;
+	transition: all 0.6 ease;
+}
+
+a.animated-button:link:after,
+a.animated-button:visited:after {
+	content: "";
+	position: absolute;
+	height: 0%;
+	left: 50%;
+	top: 50%;
+	width: 150%;
+	z-index: -1;
+	-webkit-transition: all 0.6s ease 0s;
+	-moz-transition: all 0.6s ease 0s;
+	-o-transition: all 0.6s ease 0s;
+	transition: all 0.6 ease;
+}
+
+a.animated-button:link:hover,
+a.animated-button:visited:hover {
+	color: #bbbbbb;
+	text-shadow: none;
+	transition: all 0.6s ease;
+}
+
+a.animated-button:link:hover:after,
+a.animated-button:visited:hover:after {
+	height: 450%;
+}
+
+a.animated-button:link,
+a.animated-button:visited {
+	position: relative;
+	display: block;
+	margin: 30px auto 0;
+	padding: 14px 15px;
+	color: #7f848e;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	border-radius: 0;
+	font-weight: 400;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	overflow: hidden;
+	letter-spacing: .08em;
+	text-shadow: none;
+	/* text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2); */
+	-webkit-transition: all 0.6 ease;
+	-moz-transition: all 0.6 ease;
+	-o-transition: all 0.6 ease;
+	transition: all 0.6 ease;
+}
+
+/* #endregion Button Styles */
+
+/* #region Button 2 */
+
+a.animated-button.selected {
+	/* red */
+	/* background: #D24D57; */
+	color: #bbbbbb;
+
+	/* blue */
+	/* background: #45a4ed */
+
+	/* semired */
+	background: #e06c75ff;
+
+
+	
+
+}
+
+a.animated-button.unselected {
+
+	-moz-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+	-ms-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+	-webkit-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+	transform: translateX(-50%) translateY(-50%) rotate(25deg);
+}
+
+a.animated-button.button-two {
+	/* border: 1.5px solid rgb(159, 231, 76); */
+	border: 1.5px solid #e06c75ff;
+	border-radius: 5px;
+}
+
+a.animated-button.button-two:after {
+	/* background: rgb(159, 231, 76); */
+	background: #e06c75ff;
+	-moz-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+	-ms-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+	-webkit-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+	transform: translateX(-50%) translateY(-50%) rotate(25deg);
+}
+
+/* #endregion Button 2 */
+
+/* #region buttons 1,3,4 */
+
+a.animated-button.button-one {
+	border: 2px solid #D24D57;
+	border-radius: 5px;
+}
+
+a.animated-button.button-one:after {
+	background: #D24D57;
+	-moz-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+	-ms-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+	-webkit-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+	transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+}
+
+
+a.animated-button.button-three {
+	border: 2px solid #D24D57;
+	border-radius: 5px;
+}
+
+a.animated-button.button-three:after {
+	background: #D24D57;
+	opacity: .5;
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+
+a.animated-button.button-three:hover:after {
+	height: 140%;
+	opacity: 1;
+}
+
+a.animated-button.button-four {
+	border: 2px solid #D24D57;
+	border-radius: 5px;
+}
+
+a.animated-button.button-four:after {
+	background: #D24D57;
+	opacity: .5;
+	-moz-transform: translateY(-50%) translateX(-50%) rotate(90deg);
+	-ms-transform: translateY(-50%) translateX(-50%) rotate(90deg);
+	-webkit-transform: translateY(-50%) translateX(-50%) rotate(90deg);
+	transform: translateY(-50%) translateX(-50%) rotate(90deg);
+}
+
+a.animated-button.button-four:hover:after {
+	opacity: 1;
+	height: 600% !important;
+}
+
+/* #endregion buttons */

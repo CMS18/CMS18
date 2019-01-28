@@ -1,0 +1,19 @@
+﻿@model List<ASPNETCoreFormulärDB2.Models.Person>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "ViewPersonList";
+}
+
+<h1>ViewPersonList</h1>
+
+
+@foreach (var person in Model)
+{
+<div>
+    @person.FirstName, @person.Email
+    <a asp-controller="Home" asp-action="ViewPerson" asp-route-id="@person.PersonId">Update</a>
+    <br />
+</div>
+
+
+}

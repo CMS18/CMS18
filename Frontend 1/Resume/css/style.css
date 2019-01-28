@@ -1,0 +1,239 @@
+/* #region Body */
+
+body {
+
+	/* just grey */
+	/* background: #282c34; */
+
+	background: #21252b;
+	overflow-y: scroll;
+}
+
+
+
+.body-pic {
+	background-image: url('/images/christmas2.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+body::-webkit-scrollbar {
+	width: 0.7em;
+}
+
+body::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: #c5c5c5;
+	outline: 1px solid slategrey;
+}
+
+
+*:focus {
+	box-shadow: none !important;
+}
+
+/* #endregion Body */
+
+.jumbotron {
+	margin-top: 1%;
+	/* background-color: #fafafa; */
+	background: #282c34;
+	border-top: 0.5px solid rgb(187, 187, 187, 0.5);
+	border-inline-start: 0.5px solid rgb(187, 187, 187, 0.5);
+	box-shadow: 3px 3px 4px rgba(0, 0, 0, .5);
+	
+}
+
+.jumbotron h1,
+.container h1 {
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 100;
+	text-transform: uppercase;
+	color: #e06c75;
+}
+
+.container p{
+	color: #98c379;
+}
+
+.profile-img {
+	margin-top: -2.2em;
+	width: 200px;
+	border-radius: 50%;
+	box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+}
+
+
+.navbar {
+	margin-top: -3.2em;
+}
+
+#cv,
+#contact,
+#letter {
+	display: none;
+}
+
+hr{
+	background:rgb(209, 154, 102, 0.1)
+}
+
+
+/* #region Footer */
+
+.footer {
+	/* background: #fafafa; */
+	background: #282c34;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	height: 3.5em;
+	/* border-bottom: 1px solid #CCCCCC;
+	border-top: 1px solid #DDDDDD; */
+	border-top: 0.5px solid rgb(187, 187, 187, 0.5);
+	border-bottom: 0.5px solid rgb(187, 187, 187, 0.5);
+
+}
+
+.footer ul {
+	padding-left: 1em;
+	text-align: center;
+	font-size: 13px;
+	list-style-type: none;
+	color: #7F8C8D;
+	margin-top: 1%;
+}
+.footer p {
+	font-family: 'Roboto', sans-serif;
+	font-size: 22px;
+	font-weight: 100;
+	margin-top: 1%;
+}
+
+/* #endregion Footer */
+
+
+/* #region social */
+
+.social li {	
+	flex: 0 1 auto;
+	/* background: none repeat scroll 0 0 #b9b9b9;
+	border: 2px solid #b9b9b9; */
+	background: none repeat scroll 0 0 #7f848e;
+	border: 2px solid #7f848e;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+	display: inline-block;
+	height: 36px;
+	line-height: 36px;
+	margin: 0 15px 0 0;
+	padding: 0%;
+	width: 36px;
+	transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-webkit-transition: all 0.5s ease 0s;
+	-ms-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+}
+
+.social li:hover {
+	transform: scale(1.15) rotate(360deg);
+	-webkit-transform: scale(1.1) rotate(360deg);
+	-moz-transform: scale(1.1) rotate(360deg);
+	-ms-transform: scale(1.1) rotate(360deg);
+	-o-transform: scale(1.1) rotate(360deg);
+}
+
+.social li:hover {
+	border: 2px solid #2c3e50;
+	background: #2c3e50;
+}
+
+.social li a i {
+	font-size: 16px;
+	margin: 0 0 0 5px;
+	color: #EDEFF1 !important;
+}
+
+
+/* #endregion social */
+
+
+/* #region content */
+
+.flex-container {
+	text-align: left;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: stretch;
+}
+
+.flex-container h2,
+h3 {
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+	text-transform: lowercase;
+	color: #61AFEF
+}
+
+
+.flex-item {
+	flex: 0 1 auto;
+	max-width: 25%;
+	min-width: 25%;
+	padding-right: 1em;
+	margin-top: 1em;
+	padding-bottom: 1em;
+	/* border-bottom: 1px solid rgb(0, 0, 0, 0.1); */
+	border-bottom: 1px solid rgb(209, 154, 102, 0.1)
+	
+}
+
+.flex-item2 {
+	flex: 0 1 auto;
+	max-width: 69%;
+	min-width: 69%;
+	margin-top: 1em;
+	padding-left: 1em;
+	padding-bottom: 1em;
+	/* border-bottom: 1px solid rgb(0, 0, 0, 0.1); */
+	border-bottom: 1px solid rgb(209, 154, 102, 0.1)
+}
+
+.flex-item3 {
+	max-width: 5%;
+	margin: 1em 0;
+	text-align: center;
+	padding: 0;
+	/* border-left: 1px solid rgb(0, 0, 0, 0.1); */
+	border-left: 1px solid rgb(209, 154, 102, 0.1)
+}
+
+.flex-container h1 {
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 100;
+}
+span{
+	color: #61AFEF
+}
+
+span.headliner p {
+	display: block;
+	margin: 0;
+}
+
+/* #endregion content */
