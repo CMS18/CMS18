@@ -1,0 +1,25 @@
+
+
+.container #header {
+    height: auto;
+    animation: wiggle 30s ease-in-out infinite 5s;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    2% {
+        transform: rotate(5deg);
+    }
+
+    3% {
+        transform: rotate(-5deg);
+    }
+
+    4% {
+        transform: rotate(0deg);
+    }
+
+}

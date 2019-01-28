@@ -1,0 +1,20 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model ASPNETCoreFormulär1.Models.UserInfo
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+
+<form asp-controller="User" asp-action="Login" method="post">
+
+    <label asp-for="Username"></label>
+    <input type="text" asp-for="Username" />
+    <br /><br />
+    <label asp-for="Password"></label>
+    <input type="password" asp-for="Password" />
+    <br />
+    <input type="submit" value="Login" />
+
+</form>

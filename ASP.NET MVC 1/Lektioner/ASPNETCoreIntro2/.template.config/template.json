@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Cheesecake",
+    "classifications": [ "Common", "Console" ],
+    "identity": "Cheesecake.ASPNETCore.Template",
+    "name": "ASP.NET MVC Template by Cheesecake",
+    "shortName": "cheesecake"
+}

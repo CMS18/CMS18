@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "index";
+}
+
+<h1>index</h1>
+
+<ul>
+    @foreach (var name in ViewBag.NameList)
+    {
+
+        <li>@name</li>
+    }
+</ul>
+
+@if (ViewBag.Number > 2)
+{
+    <p>Värdet är @ViewBag.Number och större än 2</p>
+}
+else
+{
+    <p>Värdet är mindre än 2</p>
+}

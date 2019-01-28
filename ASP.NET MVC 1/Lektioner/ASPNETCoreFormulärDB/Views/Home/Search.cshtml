@@ -1,0 +1,25 @@
+﻿@model ASPNETCoreFormulärDB.ViewModels.SearchPersonViewModel
+@{
+    ViewData["Title"] = "Search";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+<form asp-controller="Home" asp-action="Search" method="post">
+
+    <label>Search value</label>
+    <input type="text" asp-for="SearchValue" />
+
+    <input type="submit" value="Search" />
+
+</form>
+<div>
+
+    @foreach (var person in Model.SearchPerson)
+    {
+    <p>@person.FirstName, @person.Email</p>
+    <br />
+    }
+
+</div>
+

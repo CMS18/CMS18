@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shotgun</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200|Roboto:100,300,400|Rye" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script src="src/game.js"></script>
+
+</head>
+
+<body>
+    <audio id="aload" src="sound/load.wav" preload="auto"></audio>
+    <audio id="ashot" src="sound/shot.mp3" preload="auto"></audio>
+    <audio id="adeadeye" src="sound/dodgeThis.mp3" preload="auto"></audio>
+    <audio id="adodge" src="sound/bulletDodge.mp3" preload="auto"></audio>
+
+    <div class="container">
+        <img src="images/gunslinger.png" id="header">
+
+        <div class="jumbotron">
+            <div class="text-container"><p id="content"></p> <p id="content2"></p></div>
+            
+
+            <img class="hidden" src="images/bullethole1.png" id="b1">
+            <img class="hidden" src="images/bullethole1.png" id="b2">
+            <img class="hidden" src="images/bullethole1.png" id="b3">
+            <img class="hidden" src="images/bullethole1.png" id="b4">
+            <img class="hidden" src="images/bullethole1.png" id="b5">
+            <img class="hidden" src="images/bullethole1.png" id="b6">
+            
+            <div class="text-container">
+                <div class="player-bullets"><p>bullets: </p>
+                </div>
+
+                <div class="comp-bullets"><p>bullets: </p>
+                </div>
+            </div>
+            <p id="win" class="hide">Play again?</p>
+
+            <div class="buttons">
+                <button id="load" class="btn btn-primary standard">Load</button>
+                <button id="dodge" class="btn btn-primary standard">Dodge</button>
+                <button id="shoot" class="btn btn-primary standard">Shoot</button>
+                <button id="dead" class="btn btn-primary hide deadeye">Deadeye</button>
+                <button id="retry" class="btn btn-primary hide retry">Play again</button>
+            </div>
+
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<form asp-controller="MyForms" asp-action="RegisterConfirmation" method="post">
+    <label for="email">Email</label>
+    <input type="email" name="email" value="" />
+    <br />
+    <label for="firstName">First name</label>
+    <input type="text" name="firstName" value="" />
+
+    <label for="lastName">Last name</label>
+    <input type="text" name="lastName" />
+    <br />
+    <label for="password">Password</label>
+    <input type="password" name="password" />
+
+    <br /><br />
+    <input type="submit" value="Submit" />
+
+</form>

@@ -1,0 +1,140 @@
+body {
+    background: #21252b;
+
+    /* overflow-y: scroll; */
+
+}
+
+*:focus {
+    box-shadow: none !important;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    flex-basis: auto;
+    background: #e4e3c7;
+    border-radius: 8px;
+    max-width: 70%;
+    min-width: 700px;
+    text-align: center;
+
+}
+#win{
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.text-container {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+.player-bullets img,
+.comp-bullets img {
+    margin-bottom: 4px;
+    width: 20px;
+    height: auto;
+    display: inline-block;
+
+}
+
+.player-bullets,
+.comp-bullets {
+    display: flex;
+    min-height: 47.78px;
+    align-items: flex-end;
+}
+
+.player-bullets>p,
+.comp-bullets>p {
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+
+.bullet {
+    width: 20px;
+}
+
+
+.text-container>div {
+    font-family: 'Rye', cursive;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
+.jumbotron {
+    background-color: transparent;
+    width: 100%;
+    margin-bottom: 2em;
+    padding: 0;
+
+}
+
+.hidden{
+
+    opacity: 0;
+}
+
+.jumbotron>#b1 {
+    width: 4em;
+    height: auto;
+    position: absolute;
+    left: 25em;
+}
+
+.jumbotron>#b2 {
+    width: 4em;
+    height: auto;
+    position: absolute;
+    left: 35em;
+}
+
+.jumbotron>#b3 {
+    width: 4em;
+    height: auto;
+    position: absolute;
+    bottom: 29em;
+    left: 45em;
+}
+
+.jumbotron>#b4 {
+    width: 4em;
+    height: auto;
+    position: absolute;
+    left: 38em;
+}
+
+.jumbotron>#b5 {
+    width: 4em;
+    height: auto;
+    position: absolute;
+    left: 67em;
+}
+
+.jumbotron>#b6 {
+    width: 4em;
+    height: auto;
+    position: absolute;
+    left: 80em;
+}
+
+.buttons {
+    display: flex;
+    width: fit-content;
+    margin-block-start: 5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+
+}

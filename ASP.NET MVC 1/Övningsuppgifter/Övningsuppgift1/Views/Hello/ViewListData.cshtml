@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewData["Title"] = "ViewListData";
+}
+
+<h1>ViewListData</h1>
+
+<ul>
+    @foreach (var c in ViewBag.List)
+    {
+        <li>@c</li>
+    }
+</ul>
+

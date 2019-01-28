@@ -1,0 +1,21 @@
+﻿@model List<Övningsuppgift2.Models.News>
+
+
+@{
+    ViewData["Title"] = "NewsList";
+}
+
+<div class="news-list">
+    <h1>News</h1>
+
+    @foreach (var news in Model)
+    {
+        <div class="news">
+
+            <p>@news.Id</p>
+            <a asp-controller="Data" asp-action="NewsDetails"><h3>@news.Headline</h3></a>
+            <p>@news.NewsText</p>
+
+        </div>
+    }
+</div>

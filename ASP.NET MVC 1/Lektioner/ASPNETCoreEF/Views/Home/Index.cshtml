@@ -1,0 +1,20 @@
+﻿
+<link href="~/css/site.css" rel="stylesheet" />
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h1>Index</h1>
+
+<nav>
+
+    @foreach (var category in Model.ProductCategories)
+    {
+        <a asp-controller="Home" asp-action="ViewProducts" asp-route-id="@category.CategoryId">@category.CategoryName</a>
+    }
+
+</nav>
+
+@foreach (var item in Model.SelectedProducts)
+{
+<p>@item.ProductName</p>
+}

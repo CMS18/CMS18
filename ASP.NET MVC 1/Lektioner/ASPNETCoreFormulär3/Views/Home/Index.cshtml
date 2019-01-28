@@ -1,0 +1,26 @@
+﻿@model ASPNETCoreFormulär3.ViewModels.PersonViewModel
+@{
+    ViewData["Title"] = "Utbildningar";
+}
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h1>Index</h1>
+
+<form asp-controller="Home" asp-action="CreatePerson" method="post" >
+
+    <label asp-for="@Model.CurrentPerson.Name"></label>
+    <input type="text"  asp-for="@Model.CurrentPerson.Name" />
+
+    <select asp-for="@Model.CurrentPerson.RegionId" asp-items="@Model.Regions"></select>
+    <br /> <br />
+
+    @foreach (var personType in Model.PersonTypes)
+    {
+        <input type="radio" asp-for="@Model.CurrentPerson.PersonTypeId" value="@personType.PersonTypeId" />@personType.Name
+    }
+
+
+    <input type="submit" value="Save" />
+
+</form>

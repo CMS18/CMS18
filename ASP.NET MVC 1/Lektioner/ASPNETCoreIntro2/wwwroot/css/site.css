@@ -1,0 +1,17 @@
+﻿body {
+}
+
+.course{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.course-display{
+    width: auto;
+    padding: 1em;
+    border: 1px solid #9a9999;
+    border-radius: 0.5em;
+    box-shadow: #000000 2px 2px 3px;
+    margin:0.5em;
+}

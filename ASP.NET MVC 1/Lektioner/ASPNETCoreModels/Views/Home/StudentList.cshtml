@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewData["Title"] = "StudentList";
+}
+@model List<ASPNETCoreModels.Models.Student>
+
+<h1>StudentList</h1>
+<ul>
+    @foreach (var student in Model)
+    {
+        <li>@student.Name, @student.Email, @student.Phone</li>
+    }
+ </ul>
+

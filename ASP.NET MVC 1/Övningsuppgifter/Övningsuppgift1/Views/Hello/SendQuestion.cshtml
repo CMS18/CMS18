@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "SendQuestion";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@if (ViewBag.Time >= "18:00" && ViewBag.Time <= "05:00")
+{
+    <h3>
+        God kväll och välkommen till kundsupport. Klockan är @ViewBag.Time
+    </h3>
+}
+else if (ViewBag.Time >= "06:00" && ViewBag.Time <= "12:00")
+{
+    <h3>
+        God morgon och välkommen till kundsupport. Klockan är @ViewBag.Time
+    </h3>
+}
+else if (ViewBag.Time >= "13:00" && ViewBag.Time <= "17:00")
+{
+    <h3>
+        God eftermiddag och välkommen till kundsupport. Klockan är @ViewBag.Time
+    </h3>
+}
+
+@if (ViewBag.User == true)
+{
+    <h1>Welcome</h1>
+    <p>Enter question</p>
+    <textarea></textarea>
+    <a asp-controller="Hello" asp-action="ReceiveQuestion">Skicka</a>
+
+}
+else
+{
+
+    <h1>Access Denied</h1>
+}
+

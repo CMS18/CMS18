@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+
+
+<nav class="navbar">
+    @foreach (var cat in Model.Categories)
+    {
+        <a asp-controller="Home" asp-action="ViewArticles" asp-route-id="@cat.CategoryId">@cat.CategoryName</a>
+    }
+</nav>
+
+@foreach (var article in Model.SelectedArticles)
+{
+<div>
+    <h3>@article.ArticleName</h3>
+    <p>@article.ArticleSummary</p>
+</div>
+}
