@@ -1,5 +1,4 @@
 ﻿@model List<ASPNETCoreFormulärDB2.Models.Person>
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "ViewPersonList";
 }
@@ -11,7 +10,7 @@
 {
 <div>
     @person.FirstName, @person.Email
-    <a asp-controller="Home" asp-action="ViewPerson" asp-route-id="@person.PersonId">Update</a>
+    <a asp-controller="Home" asp-action="ViewPerson" asp-route-id="@person.PersonId"><button>Update</button></a>
     <br />
 </div>
 

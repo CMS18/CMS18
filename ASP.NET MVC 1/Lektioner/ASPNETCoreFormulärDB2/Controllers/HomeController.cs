@@ -9,11 +9,11 @@ namespace ASPNETCoreIntro2.Controllers
 {
     public class HomeController : Controller
     {
-        private PeronDBContext _contex;
+        private PeronDBContext _context;
 
         public HomeController(PeronDBContext context)
         {
-            _contex = context;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -24,24 +24,40 @@ namespace ASPNETCoreIntro2.Controllers
         public IActionResult ViewPersonList()
         {
 
-            List<Person> model = _contex.Person.ToList();
+            List<Person> model = _context.Person.ToList();
 
             return View(model);
         }
 
-        public IActionResult ViewPerson()
+        public IActionResult ViewPerson(int id)
         {
+            var model = _context.Person.SingleOrDefault(p => p.PersonId == id);
+            return View(model);
+        }
+
+        public IActionResult Update(Person newPersonValues)
+        {
+            var oldPersonValues = _context.Person.SingleOrDefault(p => p.PersonId == newPersonValues.PersonId);
+
+            // Dåligt och gammalt sätt att skriva
+            //oldPersonValues.FirstName = newPersonValues.FirstName;
+            //oldPersonValues.Email = newPersonValues.Email;
+
+            //Bättre och snyggare
+            _context.Entry(oldPersonValues).CurrentValues.SetValues(newPersonValues);
+
+            // Sparar alla ändringar
+            _context.SaveChanges();
 
             return View();
         }
 
-        public IActionResult Update()
+        public IActionResult Remove(int id)
         {
-            return View();
-        }
+            var person = _context.Person.SingleOrDefault(p => p.PersonId == id);
 
-        public IActionResult Remove()
-        {
+            _context.Person.Remove(person);
+            _context.SaveChanges();
             return View();
         }
     }

@@ -1,0 +1,23 @@
+﻿@model ASPNETCoreFormulärDB2.Models.Person
+<h1>ViewPerson</h1>
+
+
+<form asp-controller="Home" asp-action="Update" method="post">
+
+    <label asp-for="@Model.FirstName"></label>
+    <input type="text" asp-for="@Model.FirstName" value="@Model.FirstName" />
+
+    <br /><br />
+
+    <label asp-for="@Model.Email"></label>
+    <input type="email" asp-for="@Model.Email" value="@Model.Email" />
+    <br /><br />
+
+    <input type="hidden" asp-for="@Model.PersonId" value="@Model.PersonId" />
+
+    <input type="submit" value="Update" />
+
+</form>
+
+    <a asp-controller="Home" asp-action="Remove" asp-route-id="@Model.PersonId"><button>Remove</button></a>
+
