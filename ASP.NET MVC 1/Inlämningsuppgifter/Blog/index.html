@@ -34,9 +34,11 @@
     </header>
 
     <section>
-        <h1 id="content">_home</h1>
-        <hr>
+        <h1>_</h1><h1 id="content">home</h1>
+            <hr>
     </section>
+
+
 
     <footer>        
         <div class="footer fixed-bottom" id="footer">
@@ -65,33 +67,32 @@
             overlay.classList.add('show-menu');
         });
         document.getElementById('close-menu').addEventListener('click', function () {
-            overlay.classList.remove('show-menu');
         });
         $(function () {
             $("#blog").click(function () {
                 $("#content").fadeOut(200, function () {
-                    $(this).html("_blog").fadeIn(200);
+                    $(this).html("blog").fadeIn(200);
                 });
             });
         });
         $(function () {
             $("#home").click(function () {
                 $("#content").fadeOut(200, function () {
-                    $(this).html("_home").fadeIn(200);
+                    $(this).html("home").fadeIn(200);
                 });
             });
         });
         $(function () {
             $("#about").click(function () {
                 $("#content").fadeOut(200, function () {
-                    $(this).html("_about me").fadeIn(200);
+                    $(this).html("about me").fadeIn(200);
                 });
             });
         });
         $(function () {
             $("#contact").click(function () {
                 $("#content").fadeOut(200, function () {
-                    $(this).html("_contact").fadeIn(200);
+                    $(this).html("contact").fadeIn(200);
                 });
             });
         });

@@ -23,20 +23,19 @@ header .menu-btn {
 }
 
 section {
-  padding: 4em;
   padding-top: 0;
+  margin-left: 20em;
+  width: 70%;
 }
 
 section h1 {
   font-size: 4em;
   margin: 0em auto;
-  width: 70%;
+  display: inline-block;
 }
 
 section hr {
   border: none;
-  margin: 0em auto;
-  width: 70%;
   content: ' ';
   border-top: 5px solid #c7c7c7;
   display: block;
@@ -101,6 +100,7 @@ nav {
   background: black;
   padding: 1.5em;
   width: calc(15% - 3em);
+  min-width: 204px;
   height: calc(100vh - 3em);
   display: none;
   -webkit-transform: scaleX(0);
@@ -231,6 +231,97 @@ nav li {
     -webkit-transform: translateX(0);
             transform: translateX(0);
     opacity: 1;
+  }
+}
+
+.close-menu li:nth-of-type(1) {
+  -webkit-animation: menu-item-close .3s forwards .8s ease-out;
+          animation: menu-item-close .3s forwards .8s ease-out;
+}
+
+.close-menu li:nth-of-type(2) {
+  -webkit-animation: menu-item-close .3s forwards .6s ease-out;
+          animation: menu-item-close .3s forwards .6s ease-out;
+}
+
+.close-menu li:nth-of-type(3) {
+  -webkit-animation: menu-item-close .3s forwards .4s ease-out;
+          animation: menu-item-close .3s forwards .4s ease-out;
+}
+
+.close-menu li:nth-of-type(4) {
+  -webkit-animation: menu-item-close .3s forwards .2s ease-out;
+          animation: menu-item-close .3s forwards .2s ease-out;
+}
+
+.close-menu .close-btn {
+  -webkit-animation: close-x .3s forwards .8s ease-out;
+          animation: close-x .3s forwards .8s ease-out;
+}
+
+@-webkit-keyframes slide-close {
+  from {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  to {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+}
+
+@keyframes slide-close {
+  from {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  to {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+}
+
+@-webkit-keyframes close-x {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes close-x {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes menu-item-close {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateX(-40%);
+            transform: translateX(-40%);
+    opacity: 0;
+  }
+}
+
+@keyframes menu-item-close {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateX(-40%);
+            transform: translateX(-40%);
+    opacity: 0;
   }
 }
 /*# sourceMappingURL=main.css.map */
