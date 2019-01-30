@@ -203,45 +203,53 @@ nav {
 }
 
 .close-menu {
-    li:nth-of-type(1) {
-        animation: menu-item-close .3s forwards .8s ease-out;
-    }
-    li:nth-of-type(2) {
-        animation: menu-item-close .3s forwards .6s ease-out;
-    }
-    li:nth-of-type(3) {
-        animation: menu-item-close .3s forwards .4s ease-out;
-    }
-    li:nth-of-type(4) {
-        animation: menu-item-close .3s forwards .2s ease-out;
-    }
-
-    .close-btn{
-        animation: close-x .3s forwards .8s ease-out;
-    }
-
-    // display: block;
-    // animation: slide-close .3s forwards 1s ease-in-out;
-
+    display: block;
+    animation: close-menu 1s ease-in forwards;
+    animation-delay: 1s;
 }
 
-@keyframes slide-close {
+    .close-menu .close-btn {
+        animation: close-x 1s .3s forwards;
+    }
+
+    .close-menu li:nth-of-type(1) {
+        animation: menu-item-close .3s forwards .8s ease-in-out;
+    }
+
+    .close-menu li:nth-of-type(2) {
+        animation: menu-item-close .3s forwards .6s ease-in-out;
+    }
+
+    .close-menu li:nth-of-type(3) {
+        animation: menu-item-close .3s forwards .4s ease-in-out;
+    }
+
+    .close-menu li:nth-of-type(4) {
+        animation: menu-item-close .3s forwards .2s ease-in-out;
+    }
+
+
+@keyframes close-menu {
     from {
-        transform: scaleX(1)
+        transform: scaleX(1);
     }
+
     to {
-        transform: scaleX(0)
+        transform: scaleX(0);
     }
 }
+
 
 @keyframes close-x {
     from {
         opacity: 1;
     }
+
     to {
         opacity: 0;
     }
 }
+
 
 @keyframes menu-item-close {
     from {
@@ -252,7 +260,6 @@ nav {
     to {
 
         transform: translateX(-40%);
-        opacity: 0; 
+        opacity: 0;
     }
 }
-

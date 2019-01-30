@@ -67,6 +67,8 @@
             overlay.classList.add('show-menu');
         });
         document.getElementById('close-menu').addEventListener('click', function () {
+            overlay.classList.add('close-menu');
+            overlay.classList.remove('show-menu');
         });
         $(function () {
             $("#blog").click(function () {

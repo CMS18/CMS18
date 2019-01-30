@@ -234,32 +234,40 @@ nav li {
   }
 }
 
-.close-menu li:nth-of-type(1) {
-  -webkit-animation: menu-item-close .3s forwards .8s ease-out;
-          animation: menu-item-close .3s forwards .8s ease-out;
-}
-
-.close-menu li:nth-of-type(2) {
-  -webkit-animation: menu-item-close .3s forwards .6s ease-out;
-          animation: menu-item-close .3s forwards .6s ease-out;
-}
-
-.close-menu li:nth-of-type(3) {
-  -webkit-animation: menu-item-close .3s forwards .4s ease-out;
-          animation: menu-item-close .3s forwards .4s ease-out;
-}
-
-.close-menu li:nth-of-type(4) {
-  -webkit-animation: menu-item-close .3s forwards .2s ease-out;
-          animation: menu-item-close .3s forwards .2s ease-out;
+.close-menu {
+  display: block;
+  -webkit-animation: close-menu 1s ease-in forwards;
+          animation: close-menu 1s ease-in forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 
 .close-menu .close-btn {
-  -webkit-animation: close-x .3s forwards .8s ease-out;
-          animation: close-x .3s forwards .8s ease-out;
+  -webkit-animation: close-x 1s .3s forwards;
+          animation: close-x 1s .3s forwards;
 }
 
-@-webkit-keyframes slide-close {
+.close-menu li:nth-of-type(1) {
+  -webkit-animation: menu-item-close .3s forwards .8s ease-in-out;
+          animation: menu-item-close .3s forwards .8s ease-in-out;
+}
+
+.close-menu li:nth-of-type(2) {
+  -webkit-animation: menu-item-close .3s forwards .6s ease-in-out;
+          animation: menu-item-close .3s forwards .6s ease-in-out;
+}
+
+.close-menu li:nth-of-type(3) {
+  -webkit-animation: menu-item-close .3s forwards .4s ease-in-out;
+          animation: menu-item-close .3s forwards .4s ease-in-out;
+}
+
+.close-menu li:nth-of-type(4) {
+  -webkit-animation: menu-item-close .3s forwards .2s ease-in-out;
+          animation: menu-item-close .3s forwards .2s ease-in-out;
+}
+
+@-webkit-keyframes close-menu {
   from {
     -webkit-transform: scaleX(1);
             transform: scaleX(1);
@@ -270,7 +278,7 @@ nav li {
   }
 }
 
-@keyframes slide-close {
+@keyframes close-menu {
   from {
     -webkit-transform: scaleX(1);
             transform: scaleX(1);

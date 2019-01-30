@@ -258,6 +258,7 @@ nav {
     display: block;
     -webkit-animation: close-menu 1s ease-in forwards;
     animation: close-menu 1s ease-in forwards;
+    animation-delay: 1s;
 }
 
     .close-menu .close-btn {
