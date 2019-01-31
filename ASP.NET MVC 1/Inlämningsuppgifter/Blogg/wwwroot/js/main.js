@@ -39,38 +39,37 @@ $(function () {
     });
 });
 
-$(function () {
-    $("#blog").click(function () {
-        $("#content").fadeOut(200, function () {
-            $(this).html("blog").fadeIn(200);
-        });
+
+$("#blog").click(function () {
+    $("#content").fadeOut(200, function () {
+        $(this).html("blog").fadeIn(200);
     });
 });
-$(function () {
-    $("#shop").click(function () {
-        $("#content").fadeOut(200, function () {
-            $(this).html("webshop").fadeIn(200);
-        });
+
+
+$("#shop").click(function () {
+    $("#content").fadeOut(200, function () {
+        $(this).html("webshop").fadeIn(200);
     });
 });
-$(function () {
-    $("#home").click(function () {
-        $("#content").fadeOut(200, function () {
-            $(this).html("home").fadeIn(200);
-        });
+
+
+$("#home").click(function () {
+    $("#content").fadeOut(200, function () {
+        $(this).html("home").fadeIn(200);
     });
 });
-$(function () {
-    $("#about").click(function () {
-        $("#content").fadeOut(200, function () {
-            $(this).html("about me").fadeIn(200);
-        });
+
+
+$("#about").click(function () {
+    $("#content").fadeOut(200, function () {
+        $(this).html("about me").fadeIn(200);
     });
 });
-$(function () {
-    $("#contact").click(function () {
-        $("#content").fadeOut(200, function () {
-            $(this).html("contact").fadeIn(200);
-        });
+
+
+$("#contact").click(function () {
+    $("#content").fadeOut(200, function () {
+        $(this).html("contact").fadeIn(200);
     });
 });
