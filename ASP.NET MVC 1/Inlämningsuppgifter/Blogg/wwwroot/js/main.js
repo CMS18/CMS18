@@ -15,22 +15,29 @@ var closeMenu = document.getElementById('close-menu');
 //});
 $(function () {
     $("#open-menu").click(function () {
-        $("#overlay").show('slide', {
-            direction: 'left',
-            easing: 'swing'
-        }, 300, function () {
-                $("#close-menu").fadeIn();
-                $("#navlist li").each(function (i, li) {
-                    //alert(li);
+        $("#overlay").show('slide', {direction: 'left'}, 300, function () {
+                $("#close-menu").fadeIn(300);
+                $('#navlist li').each(function (fuckThisShit, li) {
                     setTimeout(function () {
-                        //alert(li);
-                        $(li).show();
-                    }, 1000)
+                        $(li).fadeIn(200)
+                    }, fuckThisShit * 200)
                 });
         });        
     })
 })
 
+$(function () {
+    $("#close-menu").click(function () {
+        $("#close-menu").fadeOut(300);
+        $('#navlist li').each(function (fuckThisShit, li) {
+            setTimeout(function () {
+                $(li).fadeOut(200)}, 200)
+        });
+        $(function () {
+            $("#overlay").delay(450).hide('slide', { direction: 'left' }, 300)
+        });
+    });
+});
 
 $(function () {
     $("#blog").click(function () {
