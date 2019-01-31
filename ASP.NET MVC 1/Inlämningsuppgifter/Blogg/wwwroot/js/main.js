@@ -15,13 +15,13 @@ var closeMenu = document.getElementById('close-menu');
 //});
 $(function () {
     $("#open-menu").click(function () {
-        $("#overlay").show('slide', {direction: 'left'}, 300, function () {
-                $("#close-menu").fadeIn(300);
-                $('#navlist li').each(function (fuckThisShit, li) {
-                    setTimeout(function () {
-                        $(li).fadeIn(200)
-                    }, fuckThisShit * 200)
-                });
+        $("#overlay").show('slide', { direction: 'left' }, 300, function () {
+            $("#close-menu").fadeIn(300);
+            $('#navlist li').each(function (fuckThisShit, li) {
+                setTimeout(function () {
+                    $(li).fadeIn(200)
+                }, fuckThisShit * 200)
+            });
         });        
     })
 })
