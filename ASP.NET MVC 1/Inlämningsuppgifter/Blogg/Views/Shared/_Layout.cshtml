@@ -25,12 +25,12 @@
     <nav id="overlay">
         <img src="/images/close.svg" class="close-btn" id="close-menu">
 
-        <ul>
-            <li><a href="#" id="home">_home</a></li>
-            <li><a href="#" id="blog">_blog</a></li>
-            <li><a href="#" id="shop">_webshop</a></li>
-            <li><a href="#" id="about">_about me</a></li>
-            <li><a href="#" id="contact">_contact</a></li>
+        <ul id="navlist">
+            <li><a asp-action="Home" id="home">_home</a></li>
+            <li><a asp-action="Blog" id="blog">_blog</a></li>
+            <li><a asp-action="Webshop" id="shop">_webshop</a></li>
+            <li><a asp-action="About" id="about">_about</a></li>
+            <li><a asp-action="Contact" id="contact">_contact</a></li>
         </ul>
 
     </nav>
@@ -42,7 +42,7 @@
     </header>
 
     <section>
-        <h1>_</h1><h1 id="content">home</h1>
+        <h1>_</h1><h1 id="content">@ViewContext.RouteData.Values["action"].ToString().ToLower()</h1>
         <hr>
     </section>
 
@@ -108,6 +108,7 @@
     </environment>
     <script src="~/js/main.js" asp-append-version="true"></script>
     <link rel="stylesheet" href="~/css/main.css" />
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js"></script>
 
 
     @RenderSection("Scripts", required: false)
