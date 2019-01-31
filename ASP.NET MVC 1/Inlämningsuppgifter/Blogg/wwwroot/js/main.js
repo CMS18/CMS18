@@ -38,38 +38,11 @@ $(function () {
         });
     });
 });
-
-
-$("#blog").click(function () {
-    $("#content").fadeOut(200, function () {
-        $(this).html("blog").fadeIn(200);
+$('#navlist a').click(function () {
+    var menuItem = $(this).attr('id');
+    $("#content").fadeOut(300, function () {
+        $(this).html(menuItem).fadeIn(300);
+        console.log(menuItem);
     });
 });
 
-
-$("#shop").click(function () {
-    $("#content").fadeOut(200, function () {
-        $(this).html("webshop").fadeIn(200);
-    });
-});
-
-
-$("#home").click(function () {
-    $("#content").fadeOut(200, function () {
-        $(this).html("home").fadeIn(200);
-    });
-});
-
-
-$("#about").click(function () {
-    $("#content").fadeOut(200, function () {
-        $(this).html("about me").fadeIn(200);
-    });
-});
-
-
-$("#contact").click(function () {
-    $("#content").fadeOut(200, function () {
-        $(this).html("contact").fadeIn(200);
-    });
-});
