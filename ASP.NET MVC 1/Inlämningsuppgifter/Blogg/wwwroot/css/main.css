@@ -121,6 +121,7 @@ nav {
         display: grid;
         grid-template-rows: repeat(5, 22%);
         width: 80%;
+        height: 15%;
     }
 
     nav a {
@@ -141,9 +142,6 @@ nav {
         display: none;
     }
 
-.show-menu {
-    display: block;
-}
 
 
 

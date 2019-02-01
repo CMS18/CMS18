@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETCoreFormulärDB2", "A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETCoreValidering1", "ASPNETCoreValidering1\ASPNETCoreValidering1.csproj", "{D667CEB4-4BCA-43AC-83C4-9B55CED23F51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNETCoreValidering2", "ASPNETCoreValidering2\ASPNETCoreValidering2.csproj", "{93F415A8-357F-44B1-A9B4-3398EE0AF1F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETCoreValidering2", "ASPNETCoreValidering2\ASPNETCoreValidering2.csproj", "{93F415A8-357F-44B1-A9B4-3398EE0AF1F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNETCoreConfiguration", "ASPNETCoreConfiguration\ASPNETCoreConfiguration.csproj", "{5198C259-B117-455D-94BE-5AAB33592A7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{93F415A8-357F-44B1-A9B4-3398EE0AF1F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93F415A8-357F-44B1-A9B4-3398EE0AF1F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93F415A8-357F-44B1-A9B4-3398EE0AF1F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5198C259-B117-455D-94BE-5AAB33592A7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5198C259-B117-455D-94BE-5AAB33592A7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5198C259-B117-455D-94BE-5AAB33592A7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5198C259-B117-455D-94BE-5AAB33592A7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
