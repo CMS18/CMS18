@@ -1,9 +1,16 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Blog";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Blog</h1>
-</div>
 
+@foreach (var post in Model.BlogPosts)
+{
+<section class="post">
+    <div class="postHeader">
+        <a asp-action="ViewPost" asp-route-id="@post.PostId"><span class="header">@post.PostHeader</span></a><span class="date">@post.DatePosted.ToString("g")</span>
+    </div>
+    <div class="postContext">
+        <a asp-action="ViewPost" asp-route-id="@post.PostId"><span class="context">@post.PostContext</span></a>
+    </div>
+</section>
+}

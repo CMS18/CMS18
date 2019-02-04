@@ -5,11 +5,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Blogg.Models;
+using Blogg.ViewModels;
 
 namespace Blogg.Controllers
 {
     public class HomeController : Controller
     {
+        private BlogContext _context;
+        public HomeController(BlogContext context)
+        {
+            _context = context;
+
+        }
         public IActionResult Home()
         {
             return View();
@@ -29,13 +36,20 @@ namespace Blogg.Controllers
         }
         public IActionResult Blog()
         {
-
-            return View();
+            PostViewModel post = new PostViewModel();
+            post.BlogPosts = _context.BlogPosts.ToList();
+            return View(post);
         }
         public IActionResult Contact()
         {
 
             return View();
+        }
+
+        public IActionResult ViewPost(int id)
+        {
+            var model = _context.BlogPosts.SingleOrDefault(p => p.PostId == id);
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

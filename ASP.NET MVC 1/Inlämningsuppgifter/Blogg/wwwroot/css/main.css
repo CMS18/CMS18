@@ -25,7 +25,7 @@ header {
 section {
     padding-top: 0;
     margin-left: 20em;
-    width: 70%;
+    width: 65%;
 }
 
     section h1 {
@@ -103,7 +103,6 @@ nav {
     min-width: 204px;
     height: 100%;
     display: none;
-
 }
 
     nav .close-btn {
@@ -142,6 +141,60 @@ nav {
         display: none;
     }
 
+
+section .postHeader {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    width: 95%;
+    margin-top: 4%;
+}
+
+section .header {
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    color: #5B7DEC;
+    width: 60%;
+    line-height: 1.2em;
+}
+
+section a:hover {
+    text-decoration: none;
+}
+
+section .date {
+    color: #B5B5B5;
+    font-size: 17px;
+    font-weight: 300;
+}
+
+section .postContext {
+    font-size: 18px;
+    font-weight: 300;
+    font-style: italic;
+    margin-top: 1%;
+}
+
+section .context {
+    color: black;
+    width: 60%;
+    /*display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;*/
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+section .postBread {
+    font-size: 18px;
+    font-weight: 300;
+    font-style: italic;
+    margin-top: 1%;
+    width: 95%;
+}
 
 
 

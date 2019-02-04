@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using Blogg.Models;
 
 
 namespace Blogg
@@ -31,9 +33,11 @@ namespace Blogg
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
+            var conn = @"Server=CHEESECAKE;Database=Blog;Trusted_Connection=True;ConnectRetryCount=0";
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddDbContext<BlogContext>(option => option.UseSqlServer(conn));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
