@@ -36,8 +36,10 @@ namespace Blogg.Controllers
         }
         public IActionResult Blog()
         {
-            PostViewModel post = new PostViewModel();
-            post.BlogPosts = _context.BlogPosts.ToList();
+            PostViewModel post = new PostViewModel
+            {
+                BlogPosts = _context.BlogPosts.OrderByDescending(p => p.DatePosted).ToList()
+            };
             return View(post);
         }
         public IActionResult Contact()
@@ -50,6 +52,25 @@ namespace Blogg.Controllers
         {
             var model = _context.BlogPosts.SingleOrDefault(p => p.PostId == id);
             return View(model);
+        }
+
+        public IActionResult Remove(int id)
+        {
+            var post = _context.BlogPosts.SingleOrDefault(p => p.PostId == id);
+            _context.BlogPosts.Remove(post);
+            _context.SaveChanges();
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Search(PostViewModel values)
+        {
+            PostViewModel model = new PostViewModel
+            {
+                SearchPost = _context.BlogPosts.Where(p => p.PostHeader.Contains(values.SearchValue)).ToList()
+            };
+            ModelState.Clear();
+            return View("Search", model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,16 +1,29 @@
-﻿@{
+﻿@model Blogg.ViewModels.PostViewModel
+@{
     ViewData["Title"] = "Blog";
 }
 
 
-@foreach (var post in Model.BlogPosts)
-{
-<section class="post">
-    <div class="postHeader">
-        <a asp-action="ViewPost" asp-route-id="@post.PostId"><span class="header">@post.PostHeader</span></a><span class="date">@post.DatePosted.ToString("g")</span>
-    </div>
-    <div class="postContext">
-        <a asp-action="ViewPost" asp-route-id="@post.PostId"><span class="context">@post.PostContext</span></a>
+<section>
+    <div class="search">
+        <form asp-action="Search" method="post">
+
+            <input type="text" placeholder="Search..." asp-for="SearchValue" />
+
+            <input type="submit" value="Search" />
+
+        </form>
     </div>
 </section>
+
+@foreach (var post in Model.BlogPosts)
+{
+    <section>
+        <div class="postHeader">
+            <a asp-action="ViewPost" asp-route-id="@post.PostId"><span class="header">@post.PostHeader</span></a><span class="date">@post.DatePosted.ToString("g")</span>
+        </div>
+        <div class="postContext">
+            <a asp-action="ViewPost" asp-route-id="@post.PostId"><span class="context">@post.PostContext</span></a>
+        </div>
+    </section>
 }

@@ -12,12 +12,15 @@ namespace Blogg.ViewModels
         public List<BlogPosts> BlogPosts { get; set; }
         public List<Categories> Categories { get; set; }
         public List<BlogPosts> SelectedPost { get; set; }
+        public List<BlogPosts> SearchPost { get; set; }
+        public string SearchValue { get; set; }
 
         public PostViewModel()
         {
             BlogPosts = new List<BlogPosts>();
             Categories = new List<Categories>();
             SelectedPost = new List<BlogPosts>();
+            SearchPost = new List<BlogPosts>();
         }
     }
 }

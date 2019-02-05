@@ -1,14 +1,13 @@
-﻿@model Blogg.Models.BlogPosts
-@{
+﻿@{
     ViewData["Title"] = "Blog";
 }
 
 
-<section class="post">
+<section>
     <div class="postHeader">
         <span class="header">@Model.PostHeader</span><span class="date">@Model.DatePosted.ToString("g")</span>
     </div>
     <div class="postBread">
-        <span class="context">@Model.PostBreadText</span>
+        <span>@Model.PostBreadText</span>
     </div>
 </section>

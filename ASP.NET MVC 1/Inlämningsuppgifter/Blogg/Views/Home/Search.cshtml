@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Blog";
+}
+
+<div>
+
+    @foreach (var post in Model.SearchPost)
+    {
+        <section class="post">
+            <div class="postHeader">
+                <span class="header">@post.PostHeader</span><span class="date">@post.DatePosted.ToString("g")</span>
+            </div>
+            <div class="postBread">
+                <span>@post.PostBreadText</span>
+            </div>
+        </section>
+    }
+
+</div>
