@@ -1,0 +1,16 @@
+﻿@model BlogPosts
+@{
+    ViewData["Title"] = "Blog";
+}
+
+<section>
+    <form asp-action="Create" method="post">
+
+        <input type="text" asp-for="PostHeader" placeholder="Title" maxlength="100" />
+        <br /><br />
+        <textarea style="resize:none" asp-for="PostBreadText"></textarea>
+
+        <input type="submit" class="btn btn-light" value="Create" />
+
+    </form>
+</section>

@@ -11,7 +11,7 @@ namespace Blogg.Controllers
 {
     public class HomeController : Controller
     {
-        private BlogContext _context;
+        private readonly BlogContext _context;
         public HomeController(BlogContext context)
         {
             _context = context;
@@ -71,6 +71,19 @@ namespace Blogg.Controllers
             };
             ModelState.Clear();
             return View("Search", model);
+        }
+
+        [HttpPost]
+        public IActionResult Create(BlogPosts post)
+        {
+            _context.BlogPosts.Add(post);
+            _context.SaveChanges();
+            return View();
+        }
+
+        public IActionResult Create()
+        {
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

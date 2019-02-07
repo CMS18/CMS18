@@ -1,4 +1,4 @@
-﻿@model Blogg.ViewModels.PostViewModel
+﻿@model PostViewModel
 @{
     ViewData["Title"] = "Blog";
 }
@@ -10,7 +10,7 @@
 
             <input type="text" placeholder="Search..." asp-for="SearchValue" />
 
-            <input type="submit" value="Search" />
+            <input type="submit" class="btn btn-light" value="Search" />
 
         </form>
     </div>
