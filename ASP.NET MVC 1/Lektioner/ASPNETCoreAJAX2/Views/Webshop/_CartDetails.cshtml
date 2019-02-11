@@ -1,0 +1,22 @@
+﻿@model List<Product>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<table>
+
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>@product.Name</td>
+            <td>@product.Price SEK</td>
+        </tr>
+
+    }
+    <tr>
+        <hr />
+        <td>Totalsumma: </td>
+        <td>@Model.Sum(p => p.Price) SEK</td>
+    </tr>
+
+</table>

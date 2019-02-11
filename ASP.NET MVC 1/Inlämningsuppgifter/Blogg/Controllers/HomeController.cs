@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Blogg.Models;
 using Blogg.ViewModels;
 
+
 namespace Blogg.Controllers
 {
     public class HomeController : Controller
@@ -54,35 +55,62 @@ namespace Blogg.Controllers
             return View(model);
         }
 
-        public IActionResult Remove(int id)
+        public IActionResult Remove(int id)        
         {
             var post = _context.BlogPosts.SingleOrDefault(p => p.PostId == id);
             _context.BlogPosts.Remove(post);
             _context.SaveChanges();
-            return View();
+            return RedirectToAction("Blog", "Home");
+        }
+
+        [HttpPost, ActionName("Remove")]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var post = _context.BlogPosts.SingleOrDefault(p => p.PostId == id);
+            _context.BlogPosts.Remove(post);
+            _context.SaveChanges();
+            return RedirectToAction("Blog", "Home");
         }
 
         [HttpPost]
         public IActionResult Search(PostViewModel values)
         {
-            PostViewModel model = new PostViewModel
+            switch (values.SearchValue)
             {
-                SearchPost = _context.BlogPosts.Where(p => p.PostHeader.Contains(values.SearchValue)).ToList()
-            };
-            ModelState.Clear();
-            return View("Search", model);
+                case null:
+                    return RedirectToAction("Blog");
+                default:
+                    {
+                        PostViewModel model = new PostViewModel
+                        {
+                            BlogPosts = _context.BlogPosts.Where(p => p.PostHeader.ToLower().Contains(values.SearchValue.ToLower())).ToList()
+                        };
+                        ModelState.Clear();
+                        return View("Blog", model);
+                    }
+            }
+
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Create(BlogPosts post)
         {
+            ViewBag.Categories = _context.Categories.ToList();
+
             _context.BlogPosts.Add(post);
             _context.SaveChanges();
-            return View();
+
+            var lastPost = _context.BlogPosts.Last();
+            return Redirect("ViewPost/" + lastPost.PostId);
         }
+
+
 
         public IActionResult Create()
         {
+            ViewBag.Categories = _context.Categories.ToList();
+
             return View();
         }
 

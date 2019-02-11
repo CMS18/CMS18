@@ -6,10 +6,13 @@
 <section>
     <form asp-action="Create" method="post">
 
-        <input class="title-form" type="text" asp-for="PostHeader" placeholder="Title" maxlength="100" /> 
-        <select>
-    <option value="value">text</option>
-</select>
+        <input class="title-form" type="text" asp-for="PostHeader" placeholder="Title" maxlength="100" />
+        <select asp-for="CategoryId">
+            @foreach (var category in @ViewBag.Categories)
+            {
+                <option value="@category.CategoryId">@category.CategoryName</option>
+            }
+        </select>
         <br /><br />
         <textarea style="resize:none" asp-for="PostBreadText"></textarea>
 

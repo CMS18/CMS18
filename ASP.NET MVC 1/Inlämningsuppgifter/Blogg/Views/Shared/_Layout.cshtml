@@ -81,12 +81,12 @@
         </div>
     </footer>
 
-    
+
     @*<div class="container">*@
-        <partial name="_CookieConsentPartial" />
-        <main role="main">
-            @RenderBody()
-        </main>
+    <partial name="_CookieConsentPartial" />
+    <main role="main">
+        @RenderBody()
+    </main>
     @*</div>*@
 
     <environment include="Development">
@@ -110,6 +110,8 @@
     <script src="~/js/main.js" asp-append-version="true"></script>
     <link rel="stylesheet" href="~/css/main.css" />
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
 
 
     @RenderSection("Scripts", required: false)

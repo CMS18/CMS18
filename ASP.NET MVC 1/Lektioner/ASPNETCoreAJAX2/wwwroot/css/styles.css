@@ -1,0 +1,16 @@
+﻿body {
+    font-family: Montserrat;
+}
+
+
+#productList {
+    background: lightgray;
+    float: left;
+    width: 20em;
+}
+
+#cartInfo {
+    background: lightblue;
+    float: right;
+    width: 20em;
+}

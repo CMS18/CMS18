@@ -44,11 +44,6 @@ namespace Blogg.Models
                     .IsRequired()
                     .IsUnicode(false);
 
-                entity.Property(e => e.PostContext)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .IsUnicode(false);
-
                 entity.Property(e => e.PostHeader)
                     .IsRequired()
                     .HasMaxLength(100)
