@@ -6,7 +6,10 @@
 <section>
     <form asp-action="Create" method="post">
 
-        <input type="text" asp-for="PostHeader" placeholder="Title" maxlength="100" />
+        <input class="title-form" type="text" asp-for="PostHeader" placeholder="Title" maxlength="100" /> 
+        <select>
+    <option value="value">text</option>
+</select>
         <br /><br />
         <textarea style="resize:none" asp-for="PostBreadText"></textarea>
 
