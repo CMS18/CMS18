@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<ApplicationUser> signInManager
+@inject UserManager<ApplicationUser> userManager
+
+
+@if (signInManager.IsSignedIn(User))
+{
+    <li><a asp-controller="Account" asp-action="LogOff">_logout</a> </li>
+    @if (User.IsInRole("Administrator"))
+    {
+        <li><a asp-controller="Admin" asp-action="Index">_admin</a> </li>
+    }
+    else
+    {
+        <li>
+            <a asp-controller="Admin" asp-action="Index">_@User.Identity</a>
+
+        </li>
+    }
+
+}
+else
+{
+
+    <li class="partial"><a asp-controller="Account" asp-action="Login">_login</a> </li>
+    <li class="partial"><a asp-controller="Account" asp-action="Register">_register</a> </li>
+
+}

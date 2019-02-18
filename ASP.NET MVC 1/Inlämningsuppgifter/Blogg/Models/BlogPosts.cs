@@ -14,6 +14,7 @@ namespace Blogg.Models
 
         [DataType(DataType.MultilineText)]
         [Required(ErrorMessage = "Context is required")]
+        [StringLength(2000, MinimumLength = 2, ErrorMessage = "Title must contain between 2 and 100 characters")]
         public string PostBreadText { get; set; }
         public DateTime DatePosted { get; set; }
         public int? CategoryId { get; set; }

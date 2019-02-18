@@ -8,6 +8,7 @@ body, html {
         text-decoration: none;
     }
 
+
 header {
     padding: 2em;
 }
@@ -161,7 +162,9 @@ section .header {
     color: #5B7DEC;
     line-height: 1.2em;
 }
-
+.postBread p {
+    word-break: break-word;
+}
 
 
 section a:hover {

@@ -1,0 +1,32 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="~/css/main.css" rel="stylesheet" />
+
+    <title></title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+            <li>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </li>
+            <li>
+                <a class=" nav-link text-dark" asp-controller="Home" asp-action="About">About us</a>
+            </li>
+            <li>
+                <a class=" nav-link text-dark" asp-controller="Home" asp-action="Contact">Contact</a>
+            </li>
+            <partial name="_LoginPartial" />
+
+        </ul>
+
+    </nav>
+
+    @RenderBody()
+
+</body>
+
+</html>
