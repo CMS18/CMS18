@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Webshop.IdentityData;
+using Microsoft.AspNetCore.Routing;
 
 namespace Webshop
 {
@@ -37,6 +38,12 @@ namespace Webshop
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.Configure<RouteOptions>(options =>
+            {
+                options.AppendTrailingSlash = true;
+                options.LowercaseUrls = true;
+        });
 
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("conn")));
             services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -65,6 +72,16 @@ namespace Webshop
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                    name: "Account",
+                    template: "{action}",
+                    defaults: new { controller = "Account" });
+
+                routes.MapRoute(
+                    name: "Home",
+                    template: "{action}",
+                    defaults: new { controller = "Home"});
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Home}/{id?}");

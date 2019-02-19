@@ -22,34 +22,31 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,300i" rel="stylesheet">
 </head>
 <body>
-    <nav id="overlay">
-            <img src="/images/close.svg" class="close-btn" id="close-menu">
-            <ul id="navlist">
-                <div class="flex-nav">
-                    <div class="flex-nav-container">
-                        <li><a asp-action="Home" id="home">_home</a></li>
-                        <li><a asp-action="Blog" id="blog">_blog</a></li>
-                        <li><a asp-action="Webshop" id="shop">_webshop</a></li>
-                        <li><a asp-action="About" id="about">_about</a></li>
-                        <li><a asp-action="Contact" id="contact">_contact</a></li>
-                        <li><a asp-action="Create" id="create">_create</a></li>
-                    </div>
-                    <div class="flex-nav-container">
-                        <partial name="_LoginPartial" />
-                    </div>
-                </div>
-            </ul>
-    </nav>
+
 
     <header>
         <a href="#" class="logo">LOGO_GOES_HERE</a>
-
-        <img src="/images/menu.svg" class="menu-btn" id="open-menu">
     </header>
 
     <section>
         <h1>_</h1><h1 id="content">@ViewData["Title"].ToString().ToLower()</h1>
         <hr>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <partial name="_WebshopPartial" />
+            </ul>
+            <partial name="_LoginPartial" />
+
+        </nav>
     </section>
 
 
@@ -117,6 +114,7 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.ajax.unobtrusive/3.2.4/jquery.unobtrusive-ajax.min.js"></script>
 
 
     @RenderSection("Scripts", required: false)

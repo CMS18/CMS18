@@ -1,0 +1,20 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<ApplicationUser> signInManager
+@inject UserManager<ApplicationUser> userManager
+
+
+@if (signInManager.IsSignedIn(User))
+{
+
+    <li>
+        <a class="nav-item nav-link" asp-controller="Home" asp-action="Webshop">Webshop</a>
+    </li>
+
+}
+else
+{
+    <li>
+        <a class="nav-item nav-link" asp-controller="Home" asp-action="Webshop">Webshop</a>
+    </li>
+}

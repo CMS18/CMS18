@@ -96,13 +96,21 @@ namespace Blogg.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(BlogPosts post)
         {
-            ViewBag.Categories = _context.Categories.ToList();
+            if (ModelState.IsValid)
+            {
+                ViewBag.Categories = _context.Categories.ToList();
 
-            _context.BlogPosts.Add(post);
-            _context.SaveChanges();
+                _context.BlogPosts.Add(post);
+                _context.SaveChanges();
 
-            var lastPost = _context.BlogPosts.Last();
-            return Redirect("ViewPost/" + lastPost.PostId);
+                var lastPost = _context.BlogPosts.Last();
+                return Redirect("ViewPost/" + lastPost.PostId);
+            }
+            else
+            {
+                return View();
+            }
+
         }
 
 

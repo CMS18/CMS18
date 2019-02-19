@@ -49,27 +49,20 @@ namespace Webshop.Controllers
             return View();
         }
 
-        private async Task createRole(string roleName)
-        {
-            //bool x = await _roleManager.RoleExistsAsync(roleName);
-            var role = new IdentityRole();
-            role.Name = roleName;
-            await _roleManager.CreateAsync(role);
-        }
-
         public IActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(RegisterUser user)
         {
             var result = await _signInManager.PasswordSignInAsync(user.Username, user.Password, true, false);
 
             if (result.Succeeded)
             {
-                return RedirectToAction("Index", "Webshop");
+                return RedirectToAction("Webshop", "Home");
             }
             return View();
         }

@@ -5,16 +5,27 @@
 
 
 
+
 <form asp-controller="Account" asp-action="Register" method="post">
 
-    <div class="login">
-        <label asp-for="Username"></label>
-        <input asp-for="Username" placeholder="Username" />
+    <section class="login">
+        <div class="login-frame">
+            <div class="login-form">
+                <input asp-for="Username" placeholder="Username" />
+                <span asp-validation-for="@Model.Username"></span>
+                <br /><br />
+                <input type="password" asp-for="Password" placeholder="Password" />
+                <span asp-validation-for="@Model.Password"></span>
+                <br /><br />
+                <input asp-for="Email" placeholder="Email" />
+                <br /><br />
+                <input asp-for="Name" placeholder="Name" />
+                <br /><br />
+                <div class="text-center">
+                    <input class="btn btn-light login-button" type="submit" value="Register" />
+                </div>
+            </div>
 
-        <br /><br />
-        <label asp-for="Password"></label>
-        <input type="password" asp-for="Password" placeholder="Password" />
-    </div>
-
-
+        </div>
+    </section>
 </form>
