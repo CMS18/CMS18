@@ -17,7 +17,7 @@ namespace Webshop.Models
         public int Pris { get; set; }
         public int MatrattTyp { get; set; }
 
-        public virtual MatrattTyp MatrattTypNavigation { get; set; }
+        public MatrattTyp MatrattTypNavigation { get; set; }
         public virtual ICollection<BestallningMatratt> BestallningMatratt { get; set; }
         public virtual ICollection<MatrattProdukt> MatrattProdukt { get; set; }
     }

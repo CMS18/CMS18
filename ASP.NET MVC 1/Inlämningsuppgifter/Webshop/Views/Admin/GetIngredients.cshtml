@@ -1,0 +1,20 @@
+﻿@model AddIngredientViewModel
+@{
+    ViewData["Title"] = "Ingredients";
+}
+<form asp-controller="Admin" asp-action="AddIngredient"
+      data-ajax="true"
+      data-ajax-method="POST"
+      data-ajax-mode="replace"
+      data-ajax-update="#ingredients-list">
+
+    <input type="text" asp-for="NewIngredient.ProduktNamn" maxlength="100" value="" />
+
+    <input type="submit" class="btn btn-light" value="Add" />
+
+    <div id="ingredients-list">
+        <partial name="_Ingredients" />
+    </div>
+</form>
+
+

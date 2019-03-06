@@ -74,5 +74,6 @@ namespace ASPNETCoreAJAX2.Controllers
             };
             return allProducts;
         }
-}
+
+    }
 }

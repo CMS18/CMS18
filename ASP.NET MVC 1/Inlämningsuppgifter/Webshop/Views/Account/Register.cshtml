@@ -8,21 +8,26 @@
 
 <form asp-controller="Account" asp-action="Register" method="post">
 
-    <section class="login">
-        <div class="login-frame">
-            <div class="login-form">
-                <input asp-for="Username" placeholder="Username" />
-                <span asp-validation-for="@Model.Username"></span>
+    <section class="register">
+        <div class="register-frame">
+            <div class="register-form">
+                <input asp-for="Name" placeholder="Name" />
+                <span asp-validation-for="@Model.Name"></span>
+                <input type="email" asp-for="Email" placeholder="Email" />
+                <input asp-for="Address" placeholder="Address" />
+                <input asp-for="ZipCode" placeholder="Zip code" />
+                <input asp-for="City" placeholder="City" />
+                <input asp-for="PhoneNumber" placeholder="Phonenumber" />
                 <br /><br />
+
+                <input asp-for="Username" placeholder="Username" maxlength="50" />
+                <span asp-validation-for="@Model.Username"></span>
                 <input type="password" asp-for="Password" placeholder="Password" />
                 <span asp-validation-for="@Model.Password"></span>
-                <br /><br />
-                <input asp-for="Email" placeholder="Email" />
-                <br /><br />
-                <input asp-for="Name" placeholder="Name" />
-                <br /><br />
+
+
                 <div class="text-center">
-                    <input class="btn btn-light login-button" type="submit" value="Register" />
+                    <input class="btn btn-light register-button" type="submit" value="Register" />
                 </div>
             </div>
 

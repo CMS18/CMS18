@@ -1,0 +1,35 @@
+﻿@model NewBookViewModel
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Spara en ny bok</h1>
+
+<form asp-controller="Uppgift1" asp-action="CreatedBook" method="post">
+
+
+    <label asp-for="@Model.Book.Title">Titel</label>
+    <input type="text" asp-for="@Model.Book.Title" maxlength="50" />
+    <br />
+    <label asp-for="@Model.Book.Author">Författare</label>
+    <input type="text" asp-for="@Model.Book.Author" maxlength="50" />
+    <br />
+    <label asp-for="@Model.Book.Pages">Antal sidor</label>
+    <input type="number" asp-for="@Model.Book.Pages" max="10000" />
+    <br />
+    <label asp-for="@Model.Categories">Kategori</label>
+    <select asp-for="@Model.Book.CategoryName" asp-items="@Model.Categories"></select>
+
+    <br />
+    @foreach (var item in Model.Stock)
+    {
+        <input type="radio" value="@Model.Stock" asp-for="@Model.Stock" />@item.InStockValue
+    }
+
+    <br /><br />
+    <input type="submit" value="Spara" />
+</form>
+

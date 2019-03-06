@@ -1,0 +1,19 @@
+﻿@model List<DemoASPNETCoreSession.Models.Product>
+
+<h2>Du har beställt:</h2>
+
+<table>
+
+
+    @foreach(var product in Model)
+    {
+
+        <tr>
+            <td>@product.Name</td>
+            <td>@product.Price</td>
+        </tr>
+    }
+
+</table>
+
+ <h3>Totalsumma för din beställning: @Model.Sum( p=> p.Price) </h3>

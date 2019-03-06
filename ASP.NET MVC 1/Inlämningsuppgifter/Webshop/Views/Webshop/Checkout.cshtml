@@ -1,0 +1,35 @@
+﻿@model List<MealViewModel>
+
+@{
+    ViewData["Title"] = "Webshop";
+}
+
+<section class="order">
+    <div class="order-view">
+        <h3 class="text-center">Thank you, @User.Identity.Name, for your order.</h3>
+        <div class="meal-content">
+            <div class="meal-view">
+                <p>Your order is:</p>
+
+                @foreach (var product in Model)
+                {
+                    <div class="each-meal">
+                        <span style="font-weight: bold">@product.Matratt.MatrattNamn</span>
+                        <span>@product.Matratt.Pris SEK</span>
+                    </div>
+                }
+
+                <br /><br />
+                <div class="each-meal">
+                    <span>Your total is:</span>
+                    <span>@Model.Sum(p => p.Matratt.Pris) SEK</span>
+                </div>
+
+            </div>
+            <div>
+                <img class="pizza-image" src="~/images/flat,1000x1000,075,f.u6.jpg" />
+            </div>
+        </div>
+    </div>
+
+</section>

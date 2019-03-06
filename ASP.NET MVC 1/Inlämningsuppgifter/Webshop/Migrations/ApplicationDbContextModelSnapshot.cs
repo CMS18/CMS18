@@ -136,6 +136,10 @@ namespace Webshop.Migrations
 
                     b.Property<int>("AccessFailedCount");
 
+                    b.Property<string>("Address");
+
+                    b.Property<string>("City");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
@@ -147,6 +151,8 @@ namespace Webshop.Migrations
                     b.Property<bool>("LockoutEnabled");
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
+
+                    b.Property<string>("Name");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256);
@@ -166,6 +172,8 @@ namespace Webshop.Migrations
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256);
+
+                    b.Property<string>("ZipCode");
 
                     b.HasKey("Id");
 

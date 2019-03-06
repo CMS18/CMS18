@@ -6,16 +6,25 @@
 
 @if (signInManager.IsSignedIn(User))
 {
-    <a asp-controller="Account" asp-action="LogOff">_logout</a>
-    @if (User.IsInRole("Administrator"))
-    {
-        <a asp-controller="Admin" asp-action="Index">_admin</a>
-    }
-    else
-    {
-        <a asp-controller="Admin" asp-action="Index">_@User.Identity</a>
+    <ul class="navbar-nav">
+        <li class="justify-content-end">
+            <a class="nav-item nav-link" asp-controller="Account" asp-action="LogOff">Logout</a>
+        </li>
 
-    }
+        @if (User.IsInRole("Admin"))
+        {
+            <li class="justify-content-end">
+                <a class="nav-item nav-link" asp-controller="Account" asp-action="UserDetails">Admin</a>
+            </li>
+        }
+        else
+        {
+            <li class="justify-content-end">
+                <a class="nav-item nav-link" asp-controller="Account" asp-action="UserDetails">@User.Identity.Name</a>
+            </li>
+
+        }
+    </ul>
 
 }
 else

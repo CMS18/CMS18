@@ -1,0 +1,23 @@
+﻿@model List<MealViewModel>
+
+<div class="cart-list">
+
+    @foreach (var product in Model)
+    {
+        <div class="meal">
+            <span style="font-weight: bold">@product.Matratt.MatrattNamn</span>
+
+            <span>@product.Matratt.Pris SEK</span>
+        </div>
+    }
+    <br /><br />
+    <div class="total-sum">
+        <span style="font-weight: bold">Totalsumma:</span>
+        @Model.Sum(p => p.Matratt.Pris) SEK
+
+    </div>
+    <a asp-controller="Webshop" asp-action="Checkout">
+        <button type="button" class="btn btn-success">Confirm</button>
+    </a>
+
+</div>

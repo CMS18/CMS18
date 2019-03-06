@@ -1,0 +1,32 @@
+﻿@model ApplicationUser
+@{
+    ViewData["Title"] = "UserDetails";
+}
+
+
+<form asp-controller="Account" asp-action="UserDetails" method="post">
+
+    <section class="register">
+        <div class="register-frame">
+            <div class="register-form">
+                <input asp-for="Name" />
+                <span asp-validation-for="@Model.Name"></span>
+                <input type="email" asp-for="Email" />
+                <span asp-validation-for="@Model.Email"></span>
+                <input asp-for="Address" />
+                <input asp-for="ZipCode" />
+                <input asp-for="City" />
+                <input asp-for="PhoneNumber" />
+
+                <br /><br />
+
+                <div class="text-center">
+                    <input class="btn btn-light register-button" type="submit" value="Update" />
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    @ViewData.ModelState.IsValid
+</form>

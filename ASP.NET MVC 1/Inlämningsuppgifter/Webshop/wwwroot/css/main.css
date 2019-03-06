@@ -107,31 +107,22 @@ nav a {
     font-size: 1.4em;
     text-decoration: none;
 }
-.navbar{
+
+.navbar {
     justify-content: space-between !important;
 }
 
-nav a:hover {
-    color: red;
-    font-weight: 300;
-    font-size: 1.4em;
-    text-decoration: none;
-}
 
-.partial a {
-    color: red;
-}
-
-    .partial a:hover {
-        color: white;
-    }
-
-
-
-input[type=text], input[type=password] {
+input {
     border-radius: .3em;
     border: 1px solid rgb(169, 169, 169);
     padding: .5em;
+    font-weight: 300;
+}
+
+.no-list {
+    text-decoration: none !important;
+    list-style-type: none !important;
 }
 
 
@@ -141,26 +132,131 @@ input[type=text], input[type=password] {
     margin-top: 5em;
     display: flex;
     justify-content: center;
-
 }
 
 .login-frame {
     display: flex;
     box-shadow: rgba(0,0,0,0.16) 3px 3px 10px;
     border-radius: .5em;
-    height: 60vh;
-    width: 30em;
+    height: 35vh;
+    width: 40em;
 }
 
 .login-form {
     justify-content: center;
     margin: 0 auto;
-    margin-top: 5em;
+    margin-top: 2em;
+    font-weight: 300;
 }
 
 .login-button {
     width: 70%;
     background: white !important;
     box-shadow: rgba(0,0,0,0.16) 3px 3px 6px;
+    color: rgba(0,0,0,0.7);
+    font-size: 1.2em;
+    font-weight: 300 !important;
 }
 
+.fas {
+    font-weight: 900;
+    font-size: 1.5em;
+}
+
+
+/*REGISTER*/
+
+.register {
+    margin-top: 5em;
+    display: flex;
+    justify-content: center;
+}
+
+.register-frame {
+    display: flex;
+    box-shadow: rgba(0,0,0,0.16) 3px 3px 10px;
+    border-radius: .5em;
+    height: 40vh;
+    width: 40em;
+    padding: 5em;
+}
+
+.register-form {
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+.register-button {
+    margin-top: 2em;
+    width: 35%;
+    background: white !important;
+    box-shadow: rgba(0,0,0,0.16) 3px 3px 6px;
+    color: rgba(0,0,0,0.7);
+    font-size: 1.2em;
+    font-weight: 300 !important;
+}
+
+.field-validation-error {
+    display: flex;
+    font-weight: 300;
+}
+
+/*MENU*/
+
+.menu {
+    margin-top: 5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.menu-list {
+    box-shadow: rgba(0,0,0,0.16) 3px 3px 10px;
+    border-radius: .5em;
+    height: 20vh;
+    min-width: 25em;
+    padding: 2em;
+    list-style-type: none !important;
+}
+
+.menu-form {
+    min-width: 400px;
+    width: 400px;
+}
+
+
+.cartDetails {
+    padding: 2em;
+    box-shadow: rgba(0,0,0,0.16) 3px 3px 10px;
+    border-radius: .5em;
+    width: 300px;
+    min-width: 300px;
+    height: fit-content;
+}
+
+.meal, .total-sum, .each-meal, .meal-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order {
+    padding-top: 1em;
+
+}
+
+.order-view {
+    padding: 2em;
+    box-shadow: rgba(0,0,0,0.16) 3px 3px 10px;
+    border-radius: .5em;
+    width: 95%;
+    margin: auto;
+    height: fit-content;
+}
+
+.meal-view {
+    width: 20%;
+}
+
+.pizza-image {
+    height: 400px;
+}
