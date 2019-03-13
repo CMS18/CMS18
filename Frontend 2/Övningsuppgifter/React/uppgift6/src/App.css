@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  width: 100%;
 }
 
 .App-logo {
@@ -8,9 +9,27 @@
   pointer-events: none;
 }
 
+.Flag {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+hr{
+  height: 1px;
+  border-radius: .3em;
+  background-color: black;
+  width: 50%;
+  border-style: solid !important;
+  border-width: 0;
+
+}
+
 .App-header {
-  background-color: #282c34;
+  background-color: #FFDEE9;
+  background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
   min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

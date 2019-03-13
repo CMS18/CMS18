@@ -8,7 +8,8 @@ import {
   Fruitlist,
   AdressList,
   NewsList,
-  Hello
+  Hello,
+  Figure
 } from "./index.js";
 
 var date = new Date();
@@ -33,12 +34,28 @@ export default class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <HelloReact />
+          <hr />
+
+          {/* <Figure bgColor="#7df442"/>
+          <Figure bgColor="#eb41f4"/>
+          <Figure bgColor="#f9e5c7"/> */}
+          <div className="Flag">
+            <Figure w="50px" h="90px" background="#000000" />
+            <Figure w="50px" h="90px" background="#FAE042" />
+            <Figure w="50px" h="90px" background="#ED2939" />
+          </div>
+
+          <hr />
+
           <Hello />
 
+          <hr />
 
           {/* PROPS */}
 
           <Message Message="Hello" messageDate={currentDate} />
+
+          <hr />
 
           {/* Children */}
 
@@ -46,10 +63,18 @@ export default class App extends Component {
             <h3>Är jag ett barn?</h3>
           </Product>
 
+          <hr />
+
           {/* Arraylist */}
           <Fruitlist array={fruits} />
+          <hr />
+
           <AdressList People={person} />
+          <hr />
+
           <NewsList News={newsList} />
+
+          <hr />
         </header>
       </div>
     );
