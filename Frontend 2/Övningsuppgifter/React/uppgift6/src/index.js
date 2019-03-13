@@ -9,9 +9,10 @@ import Product from './components/Product';
 import Fruitlist from './components/Fruitlist';
 import AdressList from './components/AdressList';
 import NewsList from './components/NewsList';
+import Hello from './components/Hello';
 
 export {
-    HelloReact, Message, Product, Fruitlist, AdressList, NewsList
+    HelloReact, Message, Product, Fruitlist, AdressList, NewsList, Hello
   }
 
 ReactDOM.render(<App />, document.getElementById('root'));
