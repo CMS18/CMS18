@@ -20,7 +20,7 @@ export {
   AdressList,
   NewsList,
   Hello,
-  Figure
+  Figure,
 };
 
 ReactDOM.render(<App />, document.getElementById("root"));

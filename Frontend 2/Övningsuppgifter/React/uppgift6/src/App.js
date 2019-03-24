@@ -1,16 +1,7 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import {
-  HelloReact,
-  Message,
-  Product,
-  Fruitlist,
-  AdressList,
-  NewsList,
-  Hello,
-  Figure
-} from "./index.js";
+import * as C from "./index.js";
 
 var date = new Date();
 var currentDate = date.toDateString();
@@ -33,46 +24,46 @@ export default class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <HelloReact />
+          <C.HelloReact />
           <hr />
 
           {/* <Figure bgColor="#7df442"/>
           <Figure bgColor="#eb41f4"/>
           <Figure bgColor="#f9e5c7"/> */}
           <div className="Flag">
-            <Figure w="50px" h="90px" background="#000000" />
-            <Figure w="50px" h="90px" background="#FAE042" />
-            <Figure w="50px" h="90px" background="#ED2939" />
+            <C.Figure w="50px" h="90px" background="#000000" />
+            <C.Figure w="50px" h="90px" background="#FAE042" />
+            <C.Figure w="50px" h="90px" background="#ED2939" />
           </div>
 
           <hr />
 
-          <Hello />
+          <C.Hello />
 
           <hr />
 
           {/* PROPS */}
 
-          <Message Message="Hello" messageDate={currentDate} />
+          <C.Message Message="Hello" messageDate={currentDate} />
 
           <hr />
 
           {/* Children */}
 
-          <Product>
+          <C.Product>
             <h3>Är jag ett barn?</h3>
-          </Product>
+          </C.Product>
 
           <hr />
 
           {/* Arraylist */}
-          <Fruitlist array={fruits} />
+          <C.Fruitlist array={fruits} />
           <hr />
 
-          <AdressList People={person} />
+          <C.AdressList People={person} />
           <hr />
 
-          <NewsList News={newsList} />
+          <C.NewsList News={newsList} />
 
           <hr />
         </header>

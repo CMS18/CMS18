@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+      class ViewMessage extends React.Component {
+        constructor(props) {
+          super(props);
+
+          //Eventhandlern
+          this.view = this.view.bind(this);
+        }
+
+        view() {
+          alert(this.message.value);
+        }
+        render() {
+          return (
+            <div>
+              <input type="text" ref={val => (this.message = val)} />
+              <button onClick={this.view}>Visa meddelande</button>
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<ViewMessage />, document.querySelector("#root"));
+    </script>
+  </body>
+</html>
