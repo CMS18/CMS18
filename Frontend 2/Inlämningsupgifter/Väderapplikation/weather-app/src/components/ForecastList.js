@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import ForecastItem from "./ForecastItem";
-import ForecastDetails from "./ForecastDetails";
+import DailyForecast from "./DailyForecast";
+import HourlyForecast from "./HourlyForecast";
 import moment from "moment";
 import "moment-timezone";
 import "moment/locale/sv";
@@ -10,8 +10,8 @@ import "slick-carousel/slick/slick-theme.css";
 
 export default class Forecast extends Component {
   state = {
-    forecast: [],
-    details: []
+    dailyForecast: [],
+    hourlyForecast: []
   };
 
   componentWillMount() {
@@ -20,34 +20,36 @@ export default class Forecast extends Component {
     )
       .then(resp => resp.json())
       .then(json => {
-        let filteredDay = this.filteredDay(json.list);
-        let filteredList = this.filterlist(json.list);
+        let filteredHourly = this.filteredHourly(json.list);
+        let filteredDaily = this.filteredDaily(json.list);
         this.setState({
-          forecast: filteredList,
-          details: filteredDay
+          dailyForecast: filteredDaily,
+          hourlyForecast: filteredHourly
         });
       });
   }
 
-  filteredDay = list => {
-    let forecastDetails = list.filter(item => {
-      let day = moment.unix(item.dt).hours();
-      return day;
+  filteredHourly = list => {
+    let hourlyForecast = list.filter(item => {
+      let hour = moment.unix(item.dt).hours();
+      return hour;
     });
-    return forecastDetails;
+    return hourlyForecast;
   };
-  filterlist = list => {
-    let forecastDays = list.filter(item => {
+  
+  filteredDaily = list => {
+    let dailyForecast = list.filter(item => {
       let hour = moment
         .unix(item.dt)
         .utc()
         .hours();
-      if (hour === 12) {
+      if (hour === 15) {
         return item;
       }
       return null;
     });
-    return forecastDays;
+    console.log(dailyForecast)
+    return dailyForecast;
   };
   render() {
     let settings = {
@@ -68,16 +70,16 @@ export default class Forecast extends Component {
       }
     };
 
-    let weatherForecast = this.state.forecast.map((item, i) => (
-      <ForecastItem key={i} {...item} />
+    let dailyForecast = this.state.dailyForecast.map((item, i) => (
+      <DailyForecast key={i} {...item} />
     ));
     return (
       <React.Fragment>
         <div style={{ width: "23%", marginBottom: ".2em" }}>Hourly</div>
-        <ForecastDetails forecastDetails={this.state.details} />
+        <HourlyForecast hourlyForecast={this.state.hourlyForecast} />
         <div style={{ width: "23%", marginBottom: ".2em" }}>Daily</div>
         <div style={styles.sliderLayout} className="lol">
-          <Slider {...settings}>{weatherForecast}</Slider>
+          <Slider {...settings}>{dailyForecast}</Slider>
         </div>
       </React.Fragment>
     );

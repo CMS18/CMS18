@@ -4,7 +4,7 @@ import "moment-timezone";
 import "moment/locale/sv";
 import "../css/weather-icons.min.css";
 
-export default class ForecastItem extends Component {
+export default class DailyForecast extends Component {
   render() {
     let styles = {
       dailyLayout: {
@@ -41,15 +41,15 @@ export default class ForecastItem extends Component {
               alignItems: "center"
             }}
           >
-            <i className="wi wi-humidity" style={{ fontSize: ".8em" }} />
             <div
               style={{
                 margin: ".2em",
                 fontSize: "1.2rem"
               }}
             >
-              {Math.ceil(this.props.main.humidity)}%
+              {Math.ceil(this.props.main.humidity)}
             </div>
+            <i className="wi wi-humidity" style={{ fontSize: "1.3em" }} />
           </div>
         </div>
         <div
@@ -57,17 +57,11 @@ export default class ForecastItem extends Component {
             fontSize: "1.1rem"
           }}
         >
-          <div style={{ fontSize: "1.2rem" }}>
-            {Math.ceil(this.props.main.temp_max)}
+          <div style={{ fontSize: "1.5rem" }}>
+            {Math.ceil(this.props.main.temp)}
             <i
               className="wi wi-degrees"
-              style={{ margin: "0 .1em", fontSize: "1.7rem" }}
-            />
-            <span style={{ marginRight: ".2em" }}>/</span>
-            {Math.ceil(this.props.main.temp_min)}
-            <i
-              className="wi wi-degrees"
-              style={{ margin: "0 .1em", fontSize: "1.7rem" }}
+              style={{ margin: "0 .1em", fontSize: "1.8rem" }}
             />
           </div>
         </div>

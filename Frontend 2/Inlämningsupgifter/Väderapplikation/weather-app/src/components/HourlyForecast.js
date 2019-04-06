@@ -4,10 +4,10 @@ import "moment-timezone";
 import "moment/locale/sv";
 import "../css/weather-icons.min.css";
 
-export default class ForecastDetails extends Component {
+export default class HourlyForecast extends Component {
   render() {
     let styles = {
-      detailsLayout: {
+      hourlyLayout: {
         width: "25%",
         background: "rgba(255, 255, 255, .2)",
         display: "flex",
@@ -21,7 +21,7 @@ export default class ForecastDetails extends Component {
         fontSize: "1.2em",
         marginLeft: ".1em"
       },
-      hourlyLayout: {
+      hourLayout: {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-evenly",
@@ -30,12 +30,12 @@ export default class ForecastDetails extends Component {
       }
     };
 
-    let forecastDetails = this.props.forecastDetails
+    let hourlyForecast = this.props.hourlyForecast
       .slice(0, 5)
       .map((item, i) => {
         let iconString = "wi wi-owm-" + item.weather[0].id;
         return (
-          <div key={i} style={styles.hourlyLayout}>
+          <div key={i} style={styles.hourLayout}>
             <div>
               {moment
                 .unix(item.dt)
@@ -50,6 +50,6 @@ export default class ForecastDetails extends Component {
           </div>
         );
       });
-    return <div style={styles.detailsLayout}>{forecastDetails}</div>;
+    return <div style={styles.hourlyLayout}>{hourlyForecast}</div>;
   }
 }
