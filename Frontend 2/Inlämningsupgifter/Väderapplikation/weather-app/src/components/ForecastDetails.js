@@ -43,7 +43,7 @@ export default class ForecastDetails extends Component {
                 .format("HH:mm")}
             </div>
             <i className={iconString} />
-            <div key={i} style={{fontSize: "1.2rem"}}>
+            <div key={i} style={{ fontSize: "1.2rem" }}>
               {Math.ceil(item.main.temp)}
               <i className="wi wi-degrees" style={styles.tempLayout} />
             </div>
