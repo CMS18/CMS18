@@ -57,12 +57,18 @@ export default class ForecastItem extends Component {
             fontSize: "1.1rem"
           }}
         >
-           <div style={{ fontSize: "1.2rem" }}>
+          <div style={{ fontSize: "1.2rem" }}>
             {Math.ceil(this.props.main.temp_max)}
-            <i className="wi wi-degrees" style={{ margin: "0 .1em", fontSize: "1.7rem" }} />
+            <i
+              className="wi wi-degrees"
+              style={{ margin: "0 .1em", fontSize: "1.7rem" }}
+            />
             <span style={{ marginRight: ".2em" }}>/</span>
             {Math.ceil(this.props.main.temp_min)}
-            <i className="wi wi-degrees" style={{ margin: "0 .1em", fontSize: "1.7rem" }} />
+            <i
+              className="wi wi-degrees"
+              style={{ margin: "0 .1em", fontSize: "1.7rem" }}
+            />
           </div>
         </div>
       </div>

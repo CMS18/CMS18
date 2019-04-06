@@ -82,10 +82,16 @@ export default class Weather extends Component {
           </div>
           <div style={{ fontSize: "1.2rem", display: "flex" }}>
             {this.state.maxTemp}
-            <i className="wi wi-degrees" style={{ margin: "0 .1em", fontSize: "1.7rem" }} />
+            <i
+              className="wi wi-degrees"
+              style={{ margin: "0 .1em", fontSize: "1.7rem" }}
+            />
             <span style={{ marginRight: ".2em" }}>/</span>
             {this.state.minTemp}
-            <i className="wi wi-degrees" style={{ margin: "0 .1em", fontSize: "1.7rem" }} />
+            <i
+              className="wi wi-degrees"
+              style={{ margin: "0 .1em", fontSize: "1.7rem" }}
+            />
           </div>
           <div style={{ margin: "1em", fontWeight: "400" }}>
             {this.state.desc}

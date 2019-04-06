@@ -31,18 +31,14 @@ export default class Forecast extends Component {
 
   filteredDay = list => {
     let forecastDetails = list.filter(item => {
-      let day = moment
-        .unix(item.dt)
-        .utc()
-        .hours();
+      let day = moment.unix(item.dt).hours();
       return day;
     });
     return forecastDetails;
   };
   filterlist = list => {
     let forecastDays = list.filter(item => {
-      let hour = 
-      moment
+      let hour = moment
         .unix(item.dt)
         .utc()
         .hours();
@@ -68,7 +64,7 @@ export default class Forecast extends Component {
         borderRadius: "1.5em",
         padding: "1em 2.5em",
         boxSizing: "border-box",
-        minHeight: "13em",
+        minHeight: "13em"
       }
     };
 
