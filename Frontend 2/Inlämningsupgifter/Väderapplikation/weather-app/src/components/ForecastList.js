@@ -36,21 +36,24 @@ export default class Forecast extends Component {
     });
     return hourlyForecast;
   };
-  
+
   filteredDaily = list => {
     let dailyForecast = list.filter(item => {
       let hour = moment
         .unix(item.dt)
         .utc()
-        .hours();
+        .hour();
+      // if (hour >= 12 && hour <= 21) {
       if (hour === 15) {
+        // create a function that returns an array of object based of what day it is
+
         return item;
       }
       return null;
     });
-    console.log(dailyForecast)
     return dailyForecast;
   };
+
   render() {
     let settings = {
       infinite: true,
