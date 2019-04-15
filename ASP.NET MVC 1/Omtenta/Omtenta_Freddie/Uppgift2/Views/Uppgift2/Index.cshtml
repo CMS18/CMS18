@@ -1,0 +1,30 @@
+﻿@model ProductsViewModel
+
+
+<h1>Pick a product</h1>
+
+<form asp-controller="Uppgift2" asp-action="AddProduct" method="post">
+    <label>Välj produkt</label>
+    <select asp-for="@Model.Product.ProductId">
+        @foreach (var product in Model.ListOfProducts)
+        {
+            <option value="@product.ProductId">@product.ProductName</option>
+        }
+
+    </select>
+    <br />
+    <label asp-for="@Model.Product.UnitsOnOrder">Antal:</label>
+    <input type="number" asp-for="@Model.Product.UnitsOnOrder" />
+
+    <br />
+    @TempData["ErrorMessage"]
+    <br /><br />
+
+    <input type="submit" value="Välj Produkt" />
+    @if (@Context.Session.Keys.Count() > 0)
+    {
+        <button asp-controller="Uppgift2" asp-action="ShowProduct">Visa Produkt</button>
+    }
+
+    <br />
+</form>

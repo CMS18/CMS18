@@ -1,0 +1,12 @@
+﻿@model ProductsViewModel
+
+@foreach (var product in Model.ListOfProducts)
+{
+    <h2>@product.ProductName</h2>
+    <p>Summa: @Convert.ToInt32(product.UnitPrice)</p>
+    <p>Antal: @product.UnitsOnOrder</p>
+
+}
+
+
+<p>Total sum: @Model.Quantity</p>

@@ -1,0 +1,45 @@
+﻿@model Favourites
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+
+
+<h1>Vilken är din favorit?</h1>
+
+<form asp-controller="Uppgift1" method="post" asp-action="AddFavourite">
+    <label asp-for="Name">Namn:</label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+    <br /><br />
+
+    <label asp-for="Age">Ålder:</label>
+    <input type="number" asp-for="Age" />
+    <span asp-validation-for="Age"></span>
+    <br /><br />
+
+
+    <label asp-for="@Model.Candy">Favoritgodis</label>
+    <br />
+    @foreach (var item in Model.Candies)
+    {
+        <input asp-for="@Model.Candy" type="radio" value="@item" />@item
+        <br />
+
+    }
+    <span asp-validation-for="Candy"></span>
+    <br /><br />
+
+    <label asp-for="@Model.Seasons">Favoritårstid:</label>
+    <select asp-for="@Model.Season">
+        @foreach (var seasons in Model.Seasons)
+        {
+            <option value="@seasons">@seasons</option>
+        }
+    </select>
+    <span asp-validation-for="@Model.Season"></span>
+    <br /><br />
+
+
+    <input type="submit" value="Skicka" />
+</form>
