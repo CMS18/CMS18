@@ -112,7 +112,6 @@ nav a {
     justify-content: space-between !important;
 }
 
-
 input {
     border-radius: .3em;
     border: 1px solid rgb(169, 169, 169);
@@ -124,7 +123,6 @@ input {
     text-decoration: none !important;
     list-style-type: none !important;
 }
-
 
 /*LOGIN*/
 
@@ -162,7 +160,6 @@ input {
     font-weight: 900;
     font-size: 1.5em;
 }
-
 
 /*REGISTER*/
 
@@ -224,7 +221,6 @@ input {
     width: 400px;
 }
 
-
 .cartDetails {
     padding: 2em;
     box-shadow: rgba(0,0,0,0.16) 3px 3px 10px;
@@ -241,7 +237,6 @@ input {
 
 .order {
     padding-top: 1em;
-
 }
 
 .order-view {

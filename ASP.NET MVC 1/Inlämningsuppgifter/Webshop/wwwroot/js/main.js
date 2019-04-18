@@ -1,6 +1,4 @@
-﻿
-
-$("#open-menu").click(function () {
+﻿$("#open-menu").click(function () {
     $("#overlay").show('slide', { direction: 'left' }, 300, function () {
         $("#close-menu").fadeIn(300);
         $('#navlist li').each(function (fuckThisShit, li) {
@@ -30,4 +28,3 @@ $('#navlist a').click(function () {
         console.log(menuItem);
     });
 });
-

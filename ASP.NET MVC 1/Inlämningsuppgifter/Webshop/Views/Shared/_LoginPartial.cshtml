@@ -3,38 +3,37 @@
 @inject SignInManager<ApplicationUser> signInManager
 @inject UserManager<ApplicationUser> userManager
 
-
 @if (signInManager.IsSignedIn(User))
 {
-    <ul class="navbar-nav">
-        <li class="justify-content-end">
-            <a class="nav-item nav-link" asp-controller="Account" asp-action="LogOff">Logout</a>
-        </li>
+<ul class="navbar-nav">
+    <li class="justify-content-end">
+        <a class="nav-item nav-link" asp-controller="Account" asp-action="LogOff">Logout</a>
+    </li>
 
-        @if (User.IsInRole("Admin"))
+    @if (User.IsInRole("Admin"))
         {
-            <li class="justify-content-end">
-                <a class="nav-item nav-link" asp-controller="Account" asp-action="UserDetails">Admin</a>
-            </li>
+    <li class="justify-content-end">
+        <a class="nav-item nav-link" asp-controller="Account" asp-action="UserDetails">Admin</a>
+    </li>
         }
         else
         {
-            <li class="justify-content-end">
-                <a class="nav-item nav-link" asp-controller="Account" asp-action="UserDetails">@User.Identity.Name</a>
-            </li>
+    <li class="justify-content-end">
+        <a class="nav-item nav-link" asp-controller="Account" asp-action="UserDetails">@User.Identity.Name</a>
+    </li>
 
         }
-    </ul>
+</ul>
 
 }
 else
 {
-    <ul class="navbar-nav">
-        <li class="justify-content-end">
-            <a class="nav-item nav-link" asp-controller="Account" asp-action="Login">Login</a>
-        </li>
-        <li class="justify-content-end">
-            <a class="nav-item nav-link" asp-controller="Account" asp-action="Register">Register</a>
-        </li>
-    </ul>
+<ul class="navbar-nav">
+    <li class="justify-content-end">
+        <a class="nav-item nav-link" asp-controller="Account" asp-action="Login">Login</a>
+    </li>
+    <li class="justify-content-end">
+        <a class="nav-item nav-link" asp-controller="Account" asp-action="Register">Register</a>
+    </li>
+</ul>
 }

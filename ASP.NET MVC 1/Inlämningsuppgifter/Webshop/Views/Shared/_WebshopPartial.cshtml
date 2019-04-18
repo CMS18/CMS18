@@ -3,12 +3,11 @@
 @inject SignInManager<ApplicationUser> signInManager
 @inject UserManager<ApplicationUser> userManager
 
-
 @if (signInManager.IsSignedIn(User))
 {
 
-    <li>
-        <a class="nav-item nav-link" asp-controller="Webshop" asp-action="Webshop">Webshop</a>
-    </li>
+<li>
+    <a class="nav-item nav-link" asp-controller="Webshop" asp-action="Webshop">Webshop</a>
+</li>
 
 }

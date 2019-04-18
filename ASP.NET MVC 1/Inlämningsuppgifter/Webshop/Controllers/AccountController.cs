@@ -1,12 +1,9 @@
-﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 using Webshop.IdentityData;
 using Webshop.Models;
-using Microsoft.AspNetCore.Authorization;
-using System.Linq;
-using System.Security.Claims;
-using Webshop.ViewModels;
 
 namespace Webshop.Controllers
 {
@@ -21,7 +18,6 @@ namespace Webshop.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
             _context = context;
-
         }
 
         [AllowAnonymous]
@@ -48,18 +44,14 @@ namespace Webshop.Controllers
             var result = await _userManager.CreateAsync(userIdentity, user.Password);
             await _userManager.AddToRoleAsync(userIdentity, "RegularUser");
 
-
             if (result.Succeeded)
             {
                 await _signInManager.SignInAsync(userIdentity, isPersistent: false);
                 return RedirectToAction("Webshop", "Webshop");
-
             }
 
             return View();
         }
-
-
 
         [Authorize]
         [HttpGet]
@@ -76,7 +68,6 @@ namespace Webshop.Controllers
         {
             var model = await _userManager.GetUserAsync(User);
 
-
             model.Name = user.Name;
             model.ZipCode = user.ZipCode;
             model.Address = user.Address;
@@ -84,17 +75,14 @@ namespace Webshop.Controllers
             model.City = user.City;
             model.PhoneNumber = user.PhoneNumber;
 
-
             IdentityResult result = await _userManager.UpdateAsync(model);
 
             if (result.Succeeded)
             {
                 return View("UserDetails");
-
             }
 
             return View("UserDetails");
-
         }
 
         [AllowAnonymous]
@@ -117,12 +105,9 @@ namespace Webshop.Controllers
 
             if (result.Succeeded)
             {
-
                 return RedirectToAction("Webshop", "Webshop");
-
             }
             return View();
-
         }
     }
 }

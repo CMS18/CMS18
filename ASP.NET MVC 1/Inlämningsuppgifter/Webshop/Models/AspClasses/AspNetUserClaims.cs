@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Webshop.Models
+﻿namespace Webshop.Models
 {
     public partial class AspNetUserClaims
     {

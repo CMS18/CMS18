@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleWebServer", "SimpleWebServer\SimpleWebServer.csproj", "{10BF6717-CF46-46BA-8418-624A7EC64AAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWebApplication", "SimpleWebApplication\SimpleWebApplication.csproj", "{7320D3B9-07C4-4429-9F81-C07C8D2B9A0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleWebApplication", "SimpleWebApplication\SimpleWebApplication.csproj", "{7320D3B9-07C4-4429-9F81-C07C8D2B9A0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstMVC", "FirstMVC\FirstMVC.csproj", "{22E7836C-CC3C-4982-B14C-52BDFADF093E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{7320D3B9-07C4-4429-9F81-C07C8D2B9A0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7320D3B9-07C4-4429-9F81-C07C8D2B9A0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7320D3B9-07C4-4429-9F81-C07C8D2B9A0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22E7836C-CC3C-4982-B14C-52BDFADF093E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22E7836C-CC3C-4982-B14C-52BDFADF093E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22E7836C-CC3C-4982-B14C-52BDFADF093E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22E7836C-CC3C-4982-B14C-52BDFADF093E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

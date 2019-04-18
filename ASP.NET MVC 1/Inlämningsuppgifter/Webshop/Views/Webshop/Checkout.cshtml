@@ -13,10 +13,10 @@
 
                 @foreach (var product in Model)
                 {
-                    <div class="each-meal">
-                        <span style="font-weight: bold">@product.Matratt.MatrattNamn</span>
-                        <span>@product.Matratt.Pris SEK</span>
-                    </div>
+                <div class="each-meal">
+                    <span style="font-weight: bold">@product.Matratt.MatrattNamn</span>
+                    <span>@product.Matratt.Pris SEK</span>
+                </div>
                 }
 
                 <br /><br />
@@ -24,12 +24,10 @@
                     <span>Your total is:</span>
                     <span>@Model.Sum(p => p.Matratt.Pris) SEK</span>
                 </div>
-
             </div>
             <div>
                 <img class="pizza-image" src="~/images/flat,1000x1000,075,f.u6.jpg" />
             </div>
         </div>
     </div>
-
 </section>

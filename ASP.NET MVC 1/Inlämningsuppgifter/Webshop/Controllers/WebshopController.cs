@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Linq;
 using Webshop.IdentityData;
 using Webshop.Models;
 using Webshop.ViewModels;
@@ -16,7 +13,7 @@ namespace Webshop.Controllers
 {
     [Authorize]
     public class WebshopController : Controller
-    {        
+    {
         private readonly UserManager<ApplicationUser> _userManager;
         private TomasosContext _context { get; set; }
 
@@ -25,7 +22,6 @@ namespace Webshop.Controllers
             _context = context;
             _userManager = userManager;
         }
-
 
         public IActionResult AddProductToCart(int id)
         {
@@ -37,6 +33,7 @@ namespace Webshop.Controllers
                 case null:
                     cartList = new List<MealViewModel>();
                     break;
+
                 default:
                     {
                         var tempCart = HttpContext.Session.GetString("cart");
@@ -64,9 +61,7 @@ namespace Webshop.Controllers
             List<MealViewModel> model = JsonConvert.DeserializeObject<List<MealViewModel>>(cartValues);
 
             return View(model);
-
         }
-
 
         public List<MealViewModel> GetMeals()
         {
@@ -84,17 +79,12 @@ namespace Webshop.Controllers
             return MealList;
         }
 
-
-
         public IActionResult Webshop()
         {
             var MealList = GetMeals();
 
             return View(MealList);
         }
-
-
-
 
         //**GAMMAL ORDERHANTERING**
 
@@ -121,7 +111,7 @@ namespace Webshop.Controllers
         //        BestallningDatum = DateTime.Now,
         //        Levererad = false,
         //        Totalbelopp = cart.Sum(x => x.Matratt.Pris),
-                
+
         //    };
 
         //    _context.Bestallning.Add(order);
@@ -135,7 +125,7 @@ namespace Webshop.Controllers
         //            BestallningId = order.BestallningId,
         //            Antal = cart.Where(x => x.Matratt.MatrattId == item.Matratt.MatrattId).Count(),
         //            MatrattId = item.Matratt.MatrattId,
-                                        
+
         //        };
         //        _context.BestallningMatratt.Add(mealOrder);
         //    }

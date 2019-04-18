@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
-
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace Webshop.IdentityData
 {
@@ -13,6 +8,5 @@ namespace Webshop.IdentityData
         public string ZipCode { get; set; }
         public string City { get; set; }
         public string Name { get; set; }
-
     }
 }

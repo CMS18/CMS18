@@ -1,6 +1,5 @@
 ﻿@model List<MealViewModel>
 
-
 @{
     ViewData["Title"] = "Webshop";
 }
@@ -13,40 +12,35 @@
     <div>
         @foreach (var item in Model)
         {
-            <ul class="menu-list">
-                <li class="menu-form">
-                    <span style="font-weight: bold">@item.Matratt.MatrattNamn</span>
+        <ul class="menu-list">
+            <li class="menu-form">
+                <span style="font-weight: bold">@item.Matratt.MatrattNamn</span>
 
-                    <br />
-                    @item.Matratt.Beskrivning
-                    <br />
-                    <span style="font-weight: bold">Ingredienser</span><span>: </span>
-                    @foreach (var ingredient in item.Ingredients)
+                <br />
+                @item.Matratt.Beskrivning
+                <br />
+                <span style="font-weight: bold">Ingredienser</span><span>: </span>
+                @foreach (var ingredient in item.Ingredients)
                     {
 
-                        <span>@ingredient.ProduktNamn</span>
+                <span>@ingredient.ProduktNamn</span>
                     }
 
+                <br /><br />
+                <span style="font-weight: bold">Pris</span><span>: </span><span>@item.Matratt.Pris SEK</span>
 
-                    <br /><br />
-                    <span style="font-weight: bold">Pris</span><span>: </span><span>@item.Matratt.Pris SEK</span>
-
-                    <a asp-action="AddProductToCart"
-                       asp-route-id="@item.Matratt.MatrattId"
-                       data-ajax="true"
-                       data-ajax-method="GET"
-                       data-ajax-mode="replace"
-                       data-ajax-update="#cartInfo">
-                        <div class="float-right"><i class="fas fa-cart-plus" id="addToCart"></i></div>
-                    </a>
-
-                </li>
-
-            </ul>
+                <a asp-action="AddProductToCart"
+                   asp-route-id="@item.Matratt.MatrattId"
+                   data-ajax="true"
+                   data-ajax-method="GET"
+                   data-ajax-mode="replace"
+                   data-ajax-update="#cartInfo">
+                    <div class="float-right"><i class="fas fa-cart-plus" id="addToCart"></i></div>
+                </a>
+            </li>
+        </ul>
 
         }
-
     </div>
     <div id="cartInfo"></div>
 </section>
-

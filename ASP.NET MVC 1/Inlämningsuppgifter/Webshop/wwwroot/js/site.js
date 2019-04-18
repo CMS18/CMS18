@@ -3,7 +3,6 @@
 
 // Write your JavaScript code.
 
-
 document.getElementById("addToCart").addEventListener("click", function () {
     document.getElementById("cartInfo").classList.add("cartDetails")
 });

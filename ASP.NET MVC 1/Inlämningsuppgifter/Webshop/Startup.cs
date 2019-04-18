@@ -1,22 +1,21 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
+using System;
+using System.Threading.Tasks;
 using Webshop.IdentityData;
-using Microsoft.AspNetCore.Routing;
 using Webshop.Models;
 
 namespace Webshop
 {
     public class Startup
     {
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -33,9 +32,7 @@ namespace Webshop
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
-                
             });
-
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
                 .AddJsonOptions(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
@@ -44,7 +41,7 @@ namespace Webshop
             {
                 options.AppendTrailingSlash = true;
                 options.LowercaseUrls = true;
-        });
+            });
 
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("conn")));
             services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -54,8 +51,6 @@ namespace Webshop
             services.AddSession();
             services.AddDbContext<TomasosContext>(options => options.UseSqlServer(Configuration.GetConnectionString("conn")));
         }
-
-
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider)
@@ -79,7 +74,6 @@ namespace Webshop
 
             app.UseMvc(routes =>
             {
-
                 routes.MapRoute(
                     name: "Account",
                     template: "{action}",
@@ -88,7 +82,7 @@ namespace Webshop
                 routes.MapRoute(
                     name: "Home",
                     template: "{action}",
-                    defaults: new { controller = "Home"});
+                    defaults: new { controller = "Home" });
 
                 routes.MapRoute(
                     name: "Webshop",
@@ -107,6 +101,7 @@ namespace Webshop
 
             CreateRoles(serviceProvider).Wait();
         }
+
         private async Task CreateRoles(IServiceProvider serviceProvider)
         {
             //adding custom roles
