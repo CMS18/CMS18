@@ -2,15 +2,12 @@
 using Bank.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Logging;
 
 namespace Bank.Data
 {
     public partial class BankContext : DbContext
     {
-        public BankContext()
-        {
-        }
-
         public BankContext(DbContextOptions<BankContext> options)
             : base(options)
         {
