@@ -1,0 +1,19 @@
+﻿@model AccountViewModel
+
+<form asp-action="Login" asp-controller="Account" method="post" class="login">
+    <div>
+        <div>
+            <label asp-for="Username" />
+            <input asp-for="Username" placeholder="Username" onblur="this.placeholder = 'Username'" onfocus="this.placeholder =''" />
+            <span asp-validation-for="Username"></span>
+        </div>
+    </div>
+    <div>
+        <div>
+            <label asp-for="Password" />
+            <input asp-for="Password" type="password" placeholder="Password" onblur="this.placeholder = 'Password'" onfocus="this.placeholder =''" />
+            <span asp-validation-for="Password"></span>
+        </div>
+    </div>
+    <button type="submit" class="standard-button">Sign in</button>
+</form>

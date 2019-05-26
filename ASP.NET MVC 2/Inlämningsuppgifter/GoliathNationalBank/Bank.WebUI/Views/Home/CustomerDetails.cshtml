@@ -1,0 +1,33 @@
+﻿@model CustomerViewModel
+
+<div class="customer-details">
+
+    <div class="customer-headline">
+        <div>
+            <div>
+                <span>@Model.CustomerName</span>
+            </div>
+            <div class="customer-details-card">
+                <span>@Model.Streetaddress</span>
+                <span>@Model.City</span>
+                <span>@Model.NationalId</span>
+            </div>
+        </div>
+        <div>
+            <span>Total balance: </span><span>@Model.TotalBalance</span><span>SEK</span>
+        </div>
+    </div>
+    <div>
+        <span>Account number</span>
+        <span>Balance</span>
+    </div>
+    <div class="details-content">
+        @foreach (var item in Model.Accounts)
+        {
+            <div>
+                <span>@item.Id</span>
+                <span> @item.Balance SEK</span>
+            </div>
+        }
+    </div>
+</div>

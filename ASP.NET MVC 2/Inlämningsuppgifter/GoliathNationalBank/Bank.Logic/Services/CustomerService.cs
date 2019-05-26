@@ -1,48 +1,91 @@
-﻿using Bank.Domain.Entities;
-using Bank.Logic.Queries.GetCustomerByName;
+﻿using Bank.Logic.Queries;
 using Bank.Logic.ViewModels;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Bank.Logic.Services
 {
     public interface ICustomerService
     {
-        CustomerViewModel GetCustomer(int customerId);
+        CustomerViewModel SearchForCustomer(string name, string city);
+
+        CustomerViewModel CustomerDetails(int customerId);
+
+        CustomerViewModel GetStatistics();
     }
 
     public class CustomerService : ICustomerService
     {
-        private readonly IBankRepository _getCustomerByNameHandler;
+        private readonly IBankRepository _customerInfo;
         private readonly ILogger<CustomerService> _logger;
 
-        public CustomerService(IBankRepository getCustomerByNameHandler, ILogger<CustomerService> logger)
+        public CustomerService(IBankRepository customerInfo, ILogger<CustomerService> logger)
         {
-            _getCustomerByNameHandler = getCustomerByNameHandler;
+            _customerInfo = customerInfo;
             _logger = logger;
         }
 
-        public CustomerViewModel GetCustomer(int customerId)
+        public CustomerViewModel GetStatistics()
         {
-            _logger.LogInformation($"get customer info for user {customerId}");
+            _logger.LogInformation($"Fetching statistics");
+
+            var model = new CustomerViewModel
+            {
+                CountOfAccounts = _customerInfo.GetCountOfAccounts(),
+                CountOfCustomers = _customerInfo.GetCountOfCustomers(),
+                TotalBalance = _customerInfo.SumOfAccounts()
+            };
+
+            return model;
+        }
+
+        public CustomerViewModel SearchForCustomer(string name, string city)
+        {
+            _logger.LogInformation($"Getting customer info for user {name}");
 
             var model = new CustomerViewModel();
 
-            var customer = _getCustomerByNameHandler.GetCustomer(customerId);
-            var dispositions = _getCustomerByNameHandler.GetDispositions(customerId);
+            var customer = _customerInfo.GetCustomer(name, city);
 
-            var accounts = dispositions.Select(d => _getCustomerByNameHandler.GetAccount(d.AccountId));
+            foreach (var item in customer)
+            {
+                model.Customers.Add(item);
+            };
 
-            model.CustomerName = $"{customer.Givenname} {customer.Surname}";
+            return model;
+        }
+
+        public CustomerViewModel CustomerDetails(int id)
+        {
+            _logger.LogInformation($"Getting customer info for user {id}");
+
+            var customer = _customerInfo.ViewCustomerDetails(id);
+            var model = new CustomerViewModel
+            {
+                City = customer.City,
+                Streetaddress = customer.Streetaddress,
+                DoB = customer.Birthday,
+                Country = customer.Country,
+                Email = customer.Emailaddress,
+                ZipCode = customer.Zipcode,
+                NationalId = customer.NationalId,
+                TelephoneCountryCode = customer.Telephonecountrycode,
+                Phonenumber = customer.Telephonenumber
+            };
+            var dispositions = _customerInfo.GetDispositions(id);
+
+            var accounts = dispositions.Select(d => _customerInfo.GetAccount(d.AccountId));
+
+            var name = $"{customer.Givenname} {customer.Surname}";
+
+            model.CustomerName = name;
             model.Accounts = accounts.Select(a => new BankAccountViewModel
             {
                 Id = a.AccountId,
                 Balance = a.Balance,
-                Name = $"{customer.Givenname} {customer.Surname}"
+                Name = name,
             });
+            model.TotalBalance = accounts.Sum(c => c.Balance);
 
             return model;
         }

@@ -1,5 +1,24 @@
-﻿@{
-    ViewData["Title"] = "Index";
-}
+﻿@model CustomerViewModel
 
-<h1>Index</h1>
+@inject SignInManager<IdentityUser> signInManager
+@inject UserManager<IdentityUser> userManager
+
+@if (signInManager.IsSignedIn(User))
+{
+    <div class="search-input">
+        <form asp-controller="Home" asp-action="SearchCustomer" method="get">
+            <input type="text" name="name" placeholder="Search for customer.." onblur="this.placeholder = 'Search for customer..'" onfocus="this.placeholder =''" />
+            <input type="text" name="city" placeholder="Search for city.." onblur="this.placeholder = 'Search for city..'" onfocus="this.placeholder =''" />
+            <button type="submit" class="standard-button">Search</button>
+        </form>
+    </div>
+    <div class="bank-details">
+        <p>Total accounts: @Model.CountOfAccounts</p>
+        <p>Number of customers: @Model.CountOfCustomers</p>
+        <p>Total balance: @Model.TotalBalance</p>
+    </div>
+}
+else
+{
+    <partial name="_LoginFormPartial" model="Model.AccountViewModel" />
+}

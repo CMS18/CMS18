@@ -1,0 +1,8 @@
+﻿@model CustomerViewModel
+
+<div class="customer-content">
+    @foreach (var item in Model.Customers)
+    {
+        <a asp-action="CustomerDetails" asp-controller="Home" asp-route-id=@item.CustomerId><span>@item.Givenname @item.Surname</span> <span>@item.NationalId</span></a>
+    }
+</div>

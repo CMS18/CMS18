@@ -12,9 +12,22 @@ namespace Bank.WebUI.Controllers
             _customerService = customerService;
         }
 
-        public IActionResult Index([FromQuery]int customerId = 1337)
+        public IActionResult Index()
         {
-            return Ok(_customerService.GetCustomer(customerId));
+            return View(_customerService.GetStatistics());
+        }
+
+        [HttpGet]
+        [Route("Search/")]
+        public IActionResult SearchCustomer([FromQuery]string name, [FromQuery]string city)
+        {
+            return View(_customerService.SearchForCustomer(name, city));
+        }
+
+        [Route("Customer/{id}")]
+        public IActionResult CustomerDetails(int id)
+        {
+            return View(_customerService.CustomerDetails(id));
         }
     }
 }
