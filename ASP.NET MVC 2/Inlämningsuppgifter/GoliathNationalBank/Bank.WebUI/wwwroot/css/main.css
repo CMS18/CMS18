@@ -82,6 +82,7 @@ nav {
   .bank-details p:last-child {
     color: forestgreen; }
 
+/*#endregion*/
 /*#region LOGIN*/
 .login {
   text-align: center; }
@@ -91,7 +92,8 @@ nav {
 .customer-content {
   width: calc(70% - 30em);
   min-width: 736px;
-  margin: auto; }
+  margin: auto;
+  margin-top: 3em; }
   .customer-content a {
     border-left: var(--stats-border);
     border-right: var(--stats-border);
@@ -139,14 +141,17 @@ nav {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    background: white;
     padding: 0 !important; }
     .customer-details .details-content > div {
+      background: white; }
+    .customer-details .details-content > div a {
       display: flex;
       justify-content: space-between;
       padding: 1em; }
     .customer-details .details-content div:nth-child(2n-1) {
       background: linear-gradient(-50deg, #FFCCD3 0%, #ffdde1 100%); }
+    .customer-details .details-content :hover {
+      filter: brightness(96%); }
   .customer-details > div:first-of-type {
     border: none; }
     .customer-details > div:first-of-type span {
@@ -167,6 +172,21 @@ nav {
     border-radius: 0 0 .3em .3em; }
 
 /*#endregion*/
+/*#region PAGING*/
+.pagination {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(70% - 30em);
+  max-width: 800px;
+  min-width: 736px;
+  margin: auto;
+  margin-top: 1em; }
+  .pagination a {
+    margin: .1em;
+    min-width: 67px;
+    text-align: center; }
+
 /*#region BUTTONS */
 .standard-button {
   background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);

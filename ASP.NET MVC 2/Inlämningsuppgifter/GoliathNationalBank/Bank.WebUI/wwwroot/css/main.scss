@@ -105,6 +105,8 @@ nav {
     }
 }
 
+/*#endregion*/
+
 /*#region LOGIN*/
 
 .login {
@@ -118,6 +120,7 @@ nav {
     width: calc(70% - 30em);
     min-width: 736px;
     margin: auto;
+    margin-top: 3em;
 
     a {
         border-left: var(--stats-border);
@@ -191,10 +194,13 @@ nav {
         display: flex;
         justify-content: space-between;
         flex-direction: column;
-        background: white;
         padding: 0 !important;
 
         > div {
+            background: white;
+        }
+
+        > div a {
             display: flex;
             justify-content: space-between;
             padding: 1em;
@@ -202,6 +208,10 @@ nav {
 
         div:nth-child(2n-1) {
             background: linear-gradient(-50deg, #FFCCD3 0%, #ffdde1 100%);
+        }
+
+        :hover {
+            filter: brightness(96%);
         }
     }
 
@@ -234,6 +244,25 @@ nav {
     }
 }
 /*#endregion*/
+
+/*#region PAGING*/
+
+.pagination {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(70% - 30em);
+    max-width: 800px;
+    min-width: 736px;
+    margin: auto;
+    margin-top: 1em;
+
+    a {
+        margin: .1em;
+        min-width: 67px;
+        text-align: center;
+    }
+}
 
 /*#region BUTTONS */
 .standard-button {

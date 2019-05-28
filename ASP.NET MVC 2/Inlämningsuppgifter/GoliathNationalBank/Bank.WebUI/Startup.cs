@@ -46,6 +46,7 @@ namespace Bank.WebUI
             services.AddDistributedMemoryCache();
             services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<IBankRepository, BankRepository>();
+            services.AddAuthentication();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

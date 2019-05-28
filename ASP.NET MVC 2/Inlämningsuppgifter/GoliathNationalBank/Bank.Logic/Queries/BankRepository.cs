@@ -5,24 +5,27 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Bank.Logic.Queries
 {
     public interface IBankRepository
     {
-        List<Customer> GetCustomer(string name, string city);
+        IQueryable<Customer> GetCustomer(string name, string city);
 
         Customer ViewCustomerDetails(int id);
 
-        int GetCountOfAccounts();
+        int CountOfAllAcounts();
 
-        int GetCountOfCustomers();
+        int CountOfAllCustomers();
 
         IEnumerable<Disposition> GetDispositions(int customerId);
 
         Account GetAccount(int id);
 
         decimal SumOfAccounts();
+
+        IQueryable<Transaction> GetTransactions(int id);
     }
 
     public class BankRepository : IBankRepository
@@ -39,14 +42,14 @@ namespace Bank.Logic.Queries
             return _context.Accounts.FirstOrDefault(a => a.AccountId == id);
         }
 
-        public int GetCountOfAccounts()
+        public int CountOfAllAcounts()
         {
             var accounts = _context.Accounts.Count();
 
             return accounts;
         }
 
-        public int GetCountOfCustomers()
+        public int CountOfAllCustomers()
         {
             var customers = _context.Customers.Count();
 
@@ -60,19 +63,19 @@ namespace Bank.Logic.Queries
             return balance;
         }
 
-        public List<Customer> GetCustomer(string name, string city)
+        public IQueryable<Customer> GetCustomer(string name, string city)
         {
             if (name == null && !(city == null))
             {
-                return _context.Customers.OrderBy(i => i.Surname).Where(c => c.City == city).ToList();
+                return _context.Customers.OrderBy(i => i.Surname).Where(c => c.City == city);
             }
             else if (city == null && !(name == null))
             {
-                return _context.Customers.OrderBy(i => i.Surname).Where(n => n.Givenname == name).ToList();
+                return _context.Customers.OrderBy(i => i.Surname).Where(n => n.Givenname == name);
             }
             else if (!(city == null) && !(name == null))
             {
-                return _context.Customers.Where(c => c.City == city).OrderBy(i => i.Surname).Where(n => n.Givenname == name).ToList();
+                return _context.Customers.Where(c => c.City == city).OrderBy(i => i.Surname).Where(n => n.Givenname == name);
             }
             else
             {
@@ -83,6 +86,11 @@ namespace Bank.Logic.Queries
         public Customer ViewCustomerDetails(int id)
         {
             return _context.Customers.FirstOrDefault(c => c.CustomerId == id);
+        }
+
+        public IQueryable<Transaction> GetTransactions(int id)
+        {
+            return _context.Transactions.OrderByDescending(d => d.TransactionId).Where(t => t.AccountId == id);
         }
 
         public IEnumerable<Disposition> GetDispositions(int customerId)

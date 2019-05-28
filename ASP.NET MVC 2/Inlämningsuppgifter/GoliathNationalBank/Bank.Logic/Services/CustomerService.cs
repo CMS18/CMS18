@@ -1,17 +1,22 @@
-﻿using Bank.Logic.Queries;
+﻿using Bank.Domain.Entities;
+using Bank.Logic.Queries;
 using Bank.Logic.ViewModels;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 using System.Linq;
+using X.PagedList;
 
 namespace Bank.Logic.Services
 {
     public interface ICustomerService
     {
-        CustomerViewModel SearchForCustomer(string name, string city);
+        CustomerViewModel SearchForCustomer(string name, string city, int currentPage, int pageSize = 10);
 
         CustomerViewModel CustomerDetails(int customerId);
 
         CustomerViewModel GetStatistics();
+
+        CustomerViewModel TransactionDetails(int id, int page);
     }
 
     public class CustomerService : ICustomerService
@@ -31,21 +36,34 @@ namespace Bank.Logic.Services
 
             var model = new CustomerViewModel
             {
-                CountOfAccounts = _customerInfo.GetCountOfAccounts(),
-                CountOfCustomers = _customerInfo.GetCountOfCustomers(),
+                CountOfAccounts = _customerInfo.CountOfAllAcounts(),
+                CountOfCustomers = _customerInfo.CountOfAllCustomers(),
                 TotalBalance = _customerInfo.SumOfAccounts()
             };
 
             return model;
         }
 
-        public CustomerViewModel SearchForCustomer(string name, string city)
+        public CustomerViewModel SearchForCustomer(string name, string city, int currentPage, int pageSize = 10)
         {
             _logger.LogInformation($"Getting customer info for user {name}");
 
-            var model = new CustomerViewModel();
+            var model = new CustomerViewModel
+            {
+                Count = _customerInfo.GetCustomer(name, city).Count(),
+                CustomerName = name,
+                City = city,
+            };
+            List<Customer> customer;
 
-            var customer = _customerInfo.GetCustomer(name, city);
+            if (currentPage == 0)
+            {
+                customer = _customerInfo.GetCustomer(name, city).Skip(currentPage * pageSize).Take(pageSize).ToList();
+            }
+            else
+            {
+                customer = _customerInfo.GetCustomer(name, city).Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
+            }
 
             foreach (var item in customer)
             {
@@ -86,6 +104,30 @@ namespace Bank.Logic.Services
                 Name = name,
             });
             model.TotalBalance = accounts.Sum(c => c.Balance);
+
+            return model;
+        }
+
+        public CustomerViewModel TransactionDetails(int id, int currentPage)
+        {
+            const int pageSize = 20;
+
+            _logger.LogInformation($"Getting transaction details for account {id}");
+
+            var model = new CustomerViewModel
+            {
+                AccountId = id,
+                Count = _customerInfo.GetTransactions(id).Count(),
+                CurrentPage = currentPage,
+            };
+            List<Transaction> transactions;
+
+            transactions = _customerInfo.GetTransactions(id).Skip(currentPage * pageSize).Take(pageSize).ToList();
+
+            foreach (var item in transactions)
+            {
+                model.Transactions.Add(item);
+            }
 
             return model;
         }

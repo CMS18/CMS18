@@ -19,11 +19,19 @@ namespace Bank.WebUI.Controllers
 
         [HttpGet]
         [Route("Search/")]
-        public IActionResult SearchCustomer([FromQuery]string name, [FromQuery]string city)
+        public IActionResult SearchCustomer([FromQuery]string name, [FromQuery]string city, int currentPage, int pageSize = 10)
         {
-            return View(_customerService.SearchForCustomer(name, city));
+            return PartialView("_CustomerListPartial", _customerService.SearchForCustomer(name, city, currentPage, pageSize));
         }
 
+        [HttpGet]
+        [Route("Transactions/")]
+        public IActionResult GetTransactions([FromQuery]int id, int currentPage)
+        {
+            return PartialView("_TransactionListPartial", _customerService.TransactionDetails(id, currentPage));
+        }
+
+        [HttpGet]
         [Route("Customer/{id}")]
         public IActionResult CustomerDetails(int id)
         {

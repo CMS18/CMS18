@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Bank.WebUI.Controllers
 {
@@ -34,11 +31,16 @@ namespace Bank.WebUI.Controllers
                 }
                 else
                 {
-                    return View();
+                    return RedirectToAction("Index", "Home");
                 }
             }
 
             return NotFound();
+        }
+
+        public IActionResult Index()
+        {
+            return View();
         }
 
         public async Task<IActionResult> LogOut()

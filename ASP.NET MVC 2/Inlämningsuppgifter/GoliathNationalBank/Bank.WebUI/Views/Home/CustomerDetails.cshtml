@@ -1,5 +1,8 @@
 ﻿@model CustomerViewModel
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.ajax.unobtrusive/3.2.4/jquery.unobtrusive-ajax.min.js"></script>
+
 <div class="customer-details">
 
     <div class="customer-headline">
@@ -14,7 +17,7 @@
             </div>
         </div>
         <div>
-            <span>Total balance: </span><span>@Model.TotalBalance</span><span>SEK</span>
+            <span>Total balance: </span><span>@Model.TotalBalance.ToString("C", new CultureInfo("sv-SE"))</span>
         </div>
     </div>
     <div>
@@ -25,9 +28,13 @@
         @foreach (var item in Model.Accounts)
         {
             <div>
-                <span>@item.Id</span>
-                <span> @item.Balance SEK</span>
+                <a asp-action="GetTransactions" asp-controller="Home" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#TransactionList" method="post" asp-route-id=@item.Id>
+                    <span>@item.Id</span>
+                    <span> @item.Balance.ToString("C", new CultureInfo("sv-SE"))</span>
+                </a>
             </div>
         }
     </div>
 </div>
+
+<div id="TransactionList"></div>
