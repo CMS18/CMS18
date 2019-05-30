@@ -49,20 +49,20 @@ nav {
     justify-content: space-between;
     align-items: center;
 
-    a {
-        font-size: .6em;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 300;
-        color: var(--secondary-color);
-    }
-
-    > div span {
+    > div a span {
         font-family: 'Montserrat', sans-serif;
         font-weight: 300;
         color: var(--primary-white);
         display: inline-block;
         margin: 0 -.03em;
         letter-spacing: -.08em;
+    }
+
+    > a {
+        font-size: .6em;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+        color: var(--secondary-color);
     }
 
     span::first-letter {
@@ -75,6 +75,21 @@ nav {
     width: 31%;
     min-width: 559px;
     margin: auto;
+}
+
+/*#region CREATE CUSTOMER*/
+.createCustomer {
+    width: calc(70% - 30em);
+    margin: auto;
+    border: var(--stats-border);
+    padding: 2em;
+    border-radius: .3em;
+
+    > form {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
 }
 
 /*#region BANK DETAILS*/
@@ -243,6 +258,12 @@ nav {
         border-radius: 0 0 .3em .3em;
     }
 }
+
+.TransactionList {
+    width: calc(70% - 30em);
+    min-width: 736px;
+    margin: auto;
+}
 /*#endregion*/
 
 /*#region PAGING*/
@@ -264,6 +285,8 @@ nav {
     }
 }
 
+/*#endregion*/
+
 /*#region BUTTONS */
 .standard-button {
     background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
@@ -278,6 +301,8 @@ nav {
     font-weight: 300;
     padding: 7px 24px;
     text-decoration: none;
+    max-width: 9em;
+    text-align: center;
 }
 
 .standard-button:hover {

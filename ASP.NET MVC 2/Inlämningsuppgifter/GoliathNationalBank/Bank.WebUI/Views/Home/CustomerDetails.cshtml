@@ -1,10 +1,11 @@
 ﻿@model CustomerViewModel
 
+@inject SignInManager<IdentityUser> signInManager
+@inject UserManager<IdentityUser> userManager
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.ajax.unobtrusive/3.2.4/jquery.unobtrusive-ajax.min.js"></script>
 
 <div class="customer-details">
-
     <div class="customer-headline">
         <div>
             <div>
@@ -24,7 +25,9 @@
         <span>Account number</span>
         <span>Balance</span>
     </div>
+
     <div class="details-content">
+
         @foreach (var item in Model.Accounts)
         {
             <div>
@@ -33,8 +36,12 @@
                     <span> @item.Balance.ToString("C", new CultureInfo("sv-SE"))</span>
                 </a>
             </div>
+            @if (signInManager.IsSignedIn(User))
+            {
+                <a class="standard-button" asp-action="Withdraw" asp-controller="Account" asp-route-id=@item.Id>Withdraw</a>
+
+            }
         }
     </div>
 </div>
-
 <div id="TransactionList"></div>

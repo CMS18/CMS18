@@ -82,13 +82,11 @@ namespace Bank.Logic.Services
             {
                 City = customer.City,
                 Streetaddress = customer.Streetaddress,
-                DoB = customer.Birthday,
+                Birthday = customer.Birthday,
                 Country = customer.Country,
-                Email = customer.Emailaddress,
-                ZipCode = customer.Zipcode,
+                Emailaddress = customer.Emailaddress,
+                Zipcode = customer.Zipcode,
                 NationalId = customer.NationalId,
-                TelephoneCountryCode = customer.Telephonecountrycode,
-                Phonenumber = customer.Telephonenumber
             };
             var dispositions = _customerInfo.GetDispositions(id);
 

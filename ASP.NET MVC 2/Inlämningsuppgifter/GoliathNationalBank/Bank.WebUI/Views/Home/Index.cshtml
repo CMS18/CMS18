@@ -7,13 +7,7 @@
 
 @if (signInManager.IsSignedIn(User))
 {
-    <div class="search-input">
-        <form asp-controller="Home" asp-action="SearchCustomer" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#CustomerList" method="post">
-            <input type="text" name="name" placeholder="Search for customer.." onblur="this.placeholder = 'Search for customer..'" onfocus="this.placeholder =''" />
-            <input type="text" name="city" placeholder="Search for city.." onblur="this.placeholder = 'Search for city..'" onfocus="this.placeholder =''" />
-            <button type="submit" class="standard-button">Search</button>
-        </form>
-    </div>
+    <partial name="_SearchPartial" model="Model" />
     <div class="bank-details">
         <p>Total accounts: @Model.CountOfAccounts</p>
         <p>Number of customers: @Model.CountOfCustomers</p>

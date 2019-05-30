@@ -1,0 +1,24 @@
+﻿@model TransactionViewModel
+
+<div id="withdrawalDiv">
+    <form asp-controller="Account" asp-action="Withdraw">
+        <input type="hidden" asp-for="@Model.Account.AccountId" />
+        <div class="form-group">
+            <label asp-for="@Model.Account.AccountId">Account: </label>
+            <p>@Model.Account.AccountId</p>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Account.Balance">Balance</label>
+            <p>@Model.Account.Balance SEK</p>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Transaction.Amount">Summa</label>
+            <input type="text" asp-for="@Model.Transaction.Amount" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Godkänn uttag</button>
+    </form>
+</div>
+@if (Model.Transaction.Amount > Model.Account.Balance)
+{
+    @TempData["alertMessage"]
+}

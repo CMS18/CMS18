@@ -37,18 +37,23 @@ namespace Bank.Logic.ViewModels
         /// </summary>
         public string Streetaddress { get; set; }
 
+        public string Givenname { get; set; }
+        public string Surname { get; set; }
+        public string Gender { get; set; }
         public string City { get; set; }
-        public string ZipCode { get; set; }
+        public string Zipcode { get; set; }
         public string Country { get; set; }
-        public DateTime? DoB { get; set; }
+        public string CountryCode { get; set; }
+        public DateTime? Birthday { get; set; }
         public string NationalId { get; set; }
-        public string Email { get; set; }
-        public string TelephoneCountryCode { get; set; }
-        public string Phonenumber { get; set; }
+        public string Emailaddress { get; set; }
+        public string Telephonecountrycode { get; set; }
+        public string Telephonenumber { get; set; }
 
         public ICollection<Customer> Customers { get; set; }
         public IEnumerable<BankAccountViewModel> Accounts { get; set; }
         public ICollection<Transaction> Transactions { get; set; }
         public AccountViewModel AccountViewModel { get; set; }
+        public BankAccountViewModel BankAccount { get; set; }
     }
 }
