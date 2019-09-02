@@ -1,4 +1,4 @@
-﻿@model Customer
+﻿@model CustomerViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -39,7 +39,7 @@
             <span asp-validation-for="CountryCode" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <input asp-for="Birthday" class="form-control" />
+            <input type="date" asp-for="Birthday" class="form-control" />
             <span asp-validation-for="Birthday" class="text-danger"></span>
 
             <input asp-for="NationalId" class="form-control" placeholder="National ID" />
@@ -56,7 +56,6 @@
             <span asp-validation-for="Emailaddress" class="text-danger"></span>
         </div>
         <div>
-            <a asp-action="Index" class="standard-button">Back to List</a>
             <button type="submit" class="standard-button">Submit</button>
         </div>
     </form>

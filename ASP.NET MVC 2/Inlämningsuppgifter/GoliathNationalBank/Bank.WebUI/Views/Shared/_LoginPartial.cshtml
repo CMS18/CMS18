@@ -3,8 +3,20 @@
 
 @if (signInManager.IsSignedIn(User))
 {
-    <a asp-controller="Account" asp-action="CreateCustomer">Create new customer</a>
-    <a asp-controller="Account" asp-action="LogOut">Logout</a>
+    if (User.IsInRole("Admin"))
+    {
+        <a asp-controller="Account" asp-action="Register">Create new user</a>
+        <a asp-controller="Account" asp-action="LogOut">Logout</a>
+
+    }
+    else
+    {
+        <a asp-controller="Account" asp-action="CreateCustomer">Create new customer</a>
+
+        <a asp-controller="Account" asp-action="LogOut">Logout</a>
+
+    }
+
 }
 else
 {

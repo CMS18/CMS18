@@ -9,5 +9,9 @@ namespace Bank.Logic.ViewModels
 
         [Required(ErrorMessage = "Password is required")]
         public string Password { get; set; }
+
+        public string PasswordCheck { get; set; }
+
+        public string Role { get; set; }
     }
 }

@@ -1,0 +1,25 @@
+﻿@model TransactionViewModel
+
+<div id="withdrawalDiv">
+    <form asp-controller="Account" asp-action="Deposit">
+        <input type="hidden" asp-for="@Model.Account.AccountId" value="@Model.Account.AccountId" />
+        <div class="form-group">
+            <label asp-for="@Model.Account.AccountId">Account: </label>
+            <p>@Model.Account.AccountId</p>
+        </div>
+        <div class="form-group">
+            <input type="hidden" value="@Model.Account.Balance" />
+            <label asp-for="@Model.Account.Balance">Balance</label>
+            <p>@Model.Account.Balance SEK</p>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Transaction.Amount">Amount</label>
+            <input type="text" asp-for="@Model.Transaction.Amount" />
+        </div>
+        <button type="submit" class="standard-button">Submit</button>
+    </form>
+</div>
+@if (TempData["ErrorMessage"] != null)
+{
+    @TempData["ErrorMessage"]
+}

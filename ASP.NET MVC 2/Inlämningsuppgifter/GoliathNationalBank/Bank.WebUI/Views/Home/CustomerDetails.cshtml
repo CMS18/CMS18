@@ -8,9 +8,7 @@
 <div class="customer-details">
     <div class="customer-headline">
         <div>
-            <div>
-                <span>@Model.CustomerName</span>
-            </div>
+            <a asp-controller="Account" asp-action="EditCustomer" asp-route-id="@Model.CustomerID">@Model.CustomerName</a>
             <div class="customer-details-card">
                 <span>@Model.Streetaddress</span>
                 <span>@Model.City</span>
@@ -31,17 +29,38 @@
         @foreach (var item in Model.Accounts)
         {
             <div>
-                <a asp-action="GetTransactions" asp-controller="Home" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#TransactionList" method="post" asp-route-id=@item.Id>
-                    <span>@item.Id</span>
+                <a asp-action="GetTransactions" asp-controller="Home" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace-width" data-ajax-update="#TransactionList" method="post" asp-route-id=@item.AccountId>
+                    <span>@item.AccountId</span>
                     <span> @item.Balance.ToString("C", new CultureInfo("sv-SE"))</span>
                 </a>
             </div>
-            @if (signInManager.IsSignedIn(User))
+
+            @if (User.IsInRole("Cashier"))
             {
-                <a class="standard-button" asp-action="Withdraw" asp-controller="Account" asp-route-id=@item.Id>Withdraw</a>
+                <a class="standard-button" asp-action="Withdraw" asp-controller="Account" asp-route-id=@item.AccountId>Withdraw</a>
+                <a class="standard-button" asp-action="Deposit" asp-controller="Account" asp-route-id=@item.AccountId>Deposit</a>
+                <a class="standard-button" asp-action="Transfer" asp-controller="Account" asp-route-id=@item.AccountId>Transfer</a>
 
             }
         }
     </div>
 </div>
-<div id="TransactionList"></div>
+
+<div id="TransactionList">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Operation</th>
+                <th>Amount</th>
+                <th>Balance</th>
+                <th>Symbol</th>
+                <th>Bank</th>
+            </tr>
+        </thead>
+
+        <tbody><partial name="_TransactionListPartial" /></tbody>
+    </table>
+</div>

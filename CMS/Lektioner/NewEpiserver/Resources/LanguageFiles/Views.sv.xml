@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+
+  <language name="Svenska"
+            id="sv">
+
+    <contact>
+      <email>E-mail</email>
+      <phone>Phone</phone>
+      <noneselected>No contact selected</noneselected>
+    </contact>
+
+    <footer>
+      <company>Företaget</company>
+      <customerzone>Kund Zon</customerzone>
+      <login>Logga in</login>
+      <logout>Logga ut</logout>
+      <news>Nyheter &amp; Events</news>
+      <products>Produkter</products>
+    </footer>
+
+    <mainnavigation>
+      <search>Sök</search>
+    </mainnavigation>
+
+    <newspagetemplate>
+      <latestnews>Senaste Nyheter</latestnews>
+      <listrootempty>News list will be empty since no list root has been set</listrootempty>
+    </newspagetemplate>
+
+    <searchpagetemplate>
+      <zero>no</zero>
+      <result>Search result</result>
+      <searchbutton>Search</searchbutton>
+      <searchfor>Your search for</searchfor>
+      <resultedin>resulted in</resultedin>
+      <hits>hits</hits>
+      <disabled>EPiServer Search is not configured or is not active for this website.</disabled>
+    </searchpagetemplate>
+  </language>
+</languages>

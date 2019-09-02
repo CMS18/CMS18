@@ -139,7 +139,7 @@ nav {
     .customer-details .customer-headline > div:last-child {
       display: flex;
       align-items: flex-end; }
-      .customer-details .customer-headline > div:last-child span {
+      .customer-details .customer-headline > div:last-child > a {
         font-size: 1.2rem; }
       .customer-details .customer-headline > div:last-child span:nth-child(2) {
         color: forestgreen;

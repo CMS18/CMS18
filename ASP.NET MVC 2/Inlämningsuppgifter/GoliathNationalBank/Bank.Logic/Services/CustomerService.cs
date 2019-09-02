@@ -87,6 +87,7 @@ namespace Bank.Logic.Services
                 Emailaddress = customer.Emailaddress,
                 Zipcode = customer.Zipcode,
                 NationalId = customer.NationalId,
+                CustomerID = id,
             };
             var dispositions = _customerInfo.GetDispositions(id);
 
@@ -95,12 +96,12 @@ namespace Bank.Logic.Services
             var name = $"{customer.Givenname} {customer.Surname}";
 
             model.CustomerName = name;
-            model.Accounts = accounts.Select(a => new BankAccountViewModel
+            model.Accounts = accounts.Select(a => new Account
             {
-                Id = a.AccountId,
+                AccountId = a.AccountId,
                 Balance = a.Balance,
-                Name = name,
             });
+
             model.TotalBalance = accounts.Sum(c => c.Balance);
 
             return model;

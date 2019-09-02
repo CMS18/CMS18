@@ -22,7 +22,6 @@ namespace Bank.WebUI
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseKestrel()
                 .UseSerilog()
                 .UseStartup<Startup>();
     }
