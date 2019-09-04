@@ -76,3 +76,6 @@ _[Ss]cripts
 *.dot[Cc]over
 
 .vs/
+Episerver CMS - kursmaterial-20190902
+*.mdf
+*.ldf
