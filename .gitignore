@@ -76,7 +76,6 @@ _[Ss]cripts
 *.dot[Cc]over
 
 .vs/
-/Episerver CMS - kursmaterial-20190821
-/ASP.NET MVC 2
-ASP.NET MVC 2/Gruppuppgift
-CMS/
+Episerver CMS - kursmaterial-20190902
+*.mdf
+*.ldf

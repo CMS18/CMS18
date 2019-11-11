@@ -1,0 +1,33 @@
+﻿@model CustomerViewModel
+
+<div class="TransactionList">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Operation</th>
+                <th>Amount</th>
+                <th>Balance</th>
+                <th>Symbol</th>
+                <th>Bank</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var transaction in Model.Transactions)
+            {
+                <tr>
+                    <td>@transaction.TransactionId</td>
+                    <td>@transaction.Date.ToShortDateString()</td>
+                    <td>@transaction.Type</td>
+                    <td>@transaction.Operation</td>
+                    <td>@transaction.Amount.ToString("C", new CultureInfo("sv-SE"))</td>
+                    <td>@transaction.Balance.ToString("C", new CultureInfo("sv-SE"))</td>
+                    <td>@transaction.Symbol</td>
+                    <td>@transaction.Bank</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

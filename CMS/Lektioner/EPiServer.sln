@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29209.62
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlloyTraining", "EPiServer\AlloyTraining\AlloyTraining.csproj", "{6C134EFF-5232-4FF5-A88A-AB28CAA259AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C134EFF-5232-4FF5-A88A-AB28CAA259AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C134EFF-5232-4FF5-A88A-AB28CAA259AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C134EFF-5232-4FF5-A88A-AB28CAA259AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C134EFF-5232-4FF5-A88A-AB28CAA259AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {58CEB2AB-A8C7-4119-8033-14A1D4F03E77}
+	EndGlobalSection
+EndGlobal

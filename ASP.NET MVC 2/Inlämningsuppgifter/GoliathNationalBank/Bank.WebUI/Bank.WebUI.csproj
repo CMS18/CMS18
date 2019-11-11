@@ -21,12 +21,19 @@
     <PackageReference Include="Serilog" Version="2.8.0" />
     <PackageReference Include="Serilog.AspNetCore" Version="2.1.1" />
     <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    <PackageReference Include="X.PagedList" Version="7.6.0" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="7.6.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Bank.Data\Bank.Data.csproj" />
     <ProjectReference Include="..\Bank.Domain\Bank.Domain.csproj" />
     <ProjectReference Include="..\Bank.Logic\Bank.Logic.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Cashier\" />
+    <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
 </Project>

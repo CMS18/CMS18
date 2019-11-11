@@ -1,0 +1,62 @@
+﻿@model CustomerViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="createCustomer">
+    <form asp-action="CreateCustomer" asp-controller="Account">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+
+            <input asp-for="Givenname" class="form-control" placeholder="Given name" />
+            <span asp-validation-for="Givenname" class="text-danger"></span>
+
+            <input asp-for="Surname" class="form-control" placeholder="Surname" />
+            <span asp-validation-for="Surname" class="text-danger"></span>
+
+            <select asp-for="Gender" class="form-control">
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+            <span asp-validation-for="Gender" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input asp-for="Streetaddress" class="form-control" placeholder="Streetaddress" />
+            <span asp-validation-for="Streetaddress" class="text-danger"></span>
+
+            <input asp-for="City" class="form-control" placeholder="City" />
+            <span asp-validation-for="City" class="text-danger"></span>
+
+            <input asp-for="Zipcode" class="form-control" placeholder="Zipcode" maxlength="15" />
+            <span asp-validation-for="Zipcode" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input asp-for="Country" class="form-control" placeholder="Country" />
+            <span asp-validation-for="Country" class="text-danger"></span>
+
+            <input asp-for="CountryCode" class="form-control" placeholder="Country code" maxlength="2" />
+            <span asp-validation-for="CountryCode" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="date" asp-for="Birthday" class="form-control" />
+            <span asp-validation-for="Birthday" class="text-danger"></span>
+
+            <input asp-for="NationalId" class="form-control" placeholder="National ID" />
+            <span asp-validation-for="NationalId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input asp-for="Telephonecountrycode" class="form-control" placeholder="Telephone countrycode" />
+            <span asp-validation-for="Telephonecountrycode" class="text-danger"></span>
+
+            <input asp-for="Telephonenumber" class="form-control" placeholder="Phonenumber" maxlength="25" />
+            <span asp-validation-for="Telephonenumber" class="text-danger"></span>
+
+            <input asp-for="Emailaddress" class="form-control" placeholder="Email" />
+            <span asp-validation-for="Emailaddress" class="text-danger"></span>
+        </div>
+        <div>
+            <button type="submit" class="standard-button">Submit</button>
+        </div>
+    </form>
+</div>

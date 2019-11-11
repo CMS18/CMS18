@@ -1,8 +1,236 @@
-﻿* {
+﻿:root {
+  --primary-white: #f1f1f1;
+  --secondary-color: #767676;
+  --primary-gradient: linear-gradient(50deg, #ee9ca7 0%, #ffdde1 100%);
+  --stats-border: 1px solid rgba(0, 0, 0, 0.2); }
+
+* {
   margin: 0;
   padding: 0;
-  box-sizing: unset;
-  font-family: 'Montserrat', sans-serif; }
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif; }
+
+* :focus {
+  outline: none; }
+
+a {
+  text-decoration: none;
+  color: initial; }
+
+textarea:focus, input:focus {
+  outline: none; }
+
+input {
+  height: 1.8em;
+  border: none;
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+  padding: 1em .6em;
+  margin: 1em;
+  text-align: center; }
 
 body > div {
   margin: 2em; }
+
+nav {
+  background: var(--primary-gradient);
+  padding: 0 .5em;
+  font-size: 3em;
+  line-height: 1.7;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  nav > div a span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: var(--primary-white);
+    display: inline-block;
+    margin: 0 -.03em;
+    letter-spacing: -.08em; }
+  nav > a {
+    font-size: .6em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: var(--secondary-color); }
+  nav span::first-letter {
+    font-weight: 400;
+    color: var(--secondary-color); }
+
+.search-input {
+  width: 31%;
+  min-width: 559px;
+  margin: auto; }
+
+/*#region CREATE CUSTOMER*/
+.createCustomer {
+  width: calc(70% - 30em);
+  margin: auto;
+  border: var(--stats-border);
+  padding: 2em;
+  border-radius: .3em; }
+  .createCustomer > form {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; }
+
+/*#region BANK DETAILS*/
+.bank-details {
+  width: 30%;
+  margin: auto;
+  display: flex;
+  font-weight: 400;
+  margin-top: 3em;
+  border: var(--stats-border);
+  border-radius: .3em;
+  padding: 1em;
+  max-width: 550px;
+  min-width: 500px; }
+  .bank-details p {
+    text-align: center; }
+  .bank-details ::first-line {
+    font-weight: 300;
+    color: initial; }
+  .bank-details p:last-child {
+    color: forestgreen; }
+
+/*#endregion*/
+/*#region LOGIN*/
+.login {
+  text-align: center; }
+
+/*#endregion*/
+/*#region CUSTOMERS    */
+.customer-content {
+  width: calc(70% - 30em);
+  min-width: 736px;
+  margin: auto;
+  margin-top: 3em; }
+  .customer-content a {
+    border-left: var(--stats-border);
+    border-right: var(--stats-border);
+    cursor: pointer;
+    background: white;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between; }
+    .customer-content a span {
+      font-size: 1.2em;
+      font-weight: 300; }
+  .customer-content > :first-of-type {
+    border-top: var(--stats-border);
+    border-radius: .3em .3em 0 0; }
+  .customer-content > :last-child {
+    border-bottom: var(--stats-border);
+    border-radius: 0 0 .3em .3em; }
+  .customer-content > :nth-child(2n+1) {
+    background: linear-gradient(-50deg, #FFCCD3 0%, #ffdde1 100%); }
+  .customer-content :hover {
+    filter: brightness(96%); }
+
+/*#endregion*/
+/*#region CUSTOMER DETAILS */
+.customer-details {
+  width: calc(70% - 30em);
+  min-width: 736px;
+  margin: auto; }
+  .customer-details .customer-headline {
+    padding: 1em; }
+    .customer-details .customer-headline > div:last-child {
+      display: flex;
+      align-items: flex-end; }
+      .customer-details .customer-headline > div:last-child > a {
+        font-size: 1.2rem; }
+      .customer-details .customer-headline > div:last-child span:nth-child(2) {
+        color: forestgreen;
+        padding: 0 .1em 0 .3em; }
+  .customer-details .customer-details-card {
+    display: flex;
+    flex-direction: column;
+    font-size: .6em; }
+  .customer-details .details-content {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 0 !important; }
+    .customer-details .details-content > div {
+      background: white; }
+    .customer-details .details-content > div a {
+      display: flex;
+      justify-content: space-between;
+      padding: 1em; }
+    .customer-details .details-content div:nth-child(2n-1) {
+      background: linear-gradient(-50deg, #FFCCD3 0%, #ffdde1 100%); }
+    .customer-details .details-content :hover {
+      filter: brightness(96%); }
+  .customer-details > div:first-of-type {
+    border: none; }
+    .customer-details > div:first-of-type span {
+      font-size: 2em;
+      font-weight: 300; }
+  .customer-details > div:nth-child(2) {
+    border-top: var(--stats-border);
+    border-bottom: var(--stats-border);
+    border-radius: .3em .3em 0 0; }
+  .customer-details > :nth-child(1n+0) {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    border-left: var(--stats-border);
+    border-right: var(--stats-border); }
+  .customer-details > :last-child {
+    border-bottom: var(--stats-border);
+    border-radius: 0 0 .3em .3em; }
+
+.TransactionList {
+  width: calc(70% - 30em);
+  min-width: 736px;
+  margin: auto; }
+
+/*#endregion*/
+/*#region PAGING*/
+.pagination {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(70% - 30em);
+  max-width: 800px;
+  min-width: 736px;
+  margin: auto;
+  margin-top: 1em; }
+  .pagination a {
+    margin: .1em;
+    min-width: 67px;
+    text-align: center; }
+
+/*#endregion*/
+/*#region BUTTONS */
+.standard-button {
+  background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+  background-color: #ededed;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  display: inline-block;
+  cursor: pointer;
+  color: #777777;
+  font-size: 15px;
+  font-family: Montserrat;
+  font-weight: 300;
+  padding: 7px 24px;
+  text-decoration: none;
+  max-width: 9em;
+  text-align: center; }
+
+.standard-button:hover {
+  background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%); }
+
+.standard-button:active {
+  position: relative;
+  top: 1px; }
+
+/*#endregion*/
+@media (max-width: 800px) {
+  .customer-content, .customer-details {
+    width: 100%;
+    min-width: 300px; } }

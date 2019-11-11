@@ -1,0 +1,34 @@
+﻿@model Transaction
+
+<div id="transactionDiv">
+    <form asp-controller="Account"
+          asp-action="Transfer">
+
+        <div class="form-group">
+            <input type="hidden" asp-for="@Model.AccountId" value="@Model.AccountId" />
+            <label asp-for="@Model.AccountId">Transfer from account: <span>@Model.AccountId</span></label>
+            <label asp-for="@Model.Balance">Balance: @Model.Balance</label>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Account">Transfer to account:</label>
+            <input type="text" asp-for="@Model.Account" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Amount">Amount</label>
+            <input type="text" asp-for="@Model.Amount" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Symbol">Message</label>
+            <input type="text" asp-for="@Model.Symbol" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Bank">Bank</label>
+            <input type="text" asp-for="@Model.Bank" class="form-control" />
+        </div>
+        <button type="submit" class="standard-button">Submit</button>
+    </form>
+</div>
+@if (TempData["ErrorMessage"] != null)
+{
+    @TempData["ErrorMessage"]
+}
