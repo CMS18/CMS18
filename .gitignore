@@ -77,5 +77,10 @@ _[Ss]cripts
 
 .vs/
 Episerver CMS - kursmaterial-20190902
+/CMS
+/ASP.NET MVC 2
 *.mdf
 *.ldf
+*.pdf
+
+ASP.NET MVC 2/Gruppuppgift
